@@ -50,3 +50,16 @@ Use PostgreSQL for all structured data.
 **Implications:**
 - Schema changes require migrations
 - No manual database edits in production
+
+## 2026-01-06 — Page-Level SEO Metadata per Route
+
+**Decision:**  
+Define top level routes, and explicit metadata for each of them.
+
+**Why:**
+- Improves search relevance per page
+- Prevents duplicate titles/descriptions
+- Aligns with Next.js App Router best practices
+
+**Implications:**
+- Every new route except for login must include metadata for better SEO
