@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { PAGES } from "@/config/navigation";
+import Header from "../../components/layout/Header";
 
 // WHY: Single global font keeps typography consistent and lightweight
 const geistSans = Geist({
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.className} antialiased`}>
+        <Header />
         {children}
       </body>
     </html>

@@ -63,3 +63,17 @@ Define top level routes, and explicit metadata for each of them.
 
 **Implications:**
 - Every new route except for login must include metadata for better SEO
+
+## 2026-01-06 — Header built from PAGES config with rank ordering
+
+**Decision:**  
+Build header navigation dynamically from `PAGES`, filtering `rank >= 1` and sorting ascending by rank.
+
+**Why:**
+- Eliminates hardcoded nav items
+- Keeps UI order controlled by config
+- Makes future navigation changes safe and centralized
+
+**Implications:**
+- Adding/reordering pages requires only updating `PAGES`
+- Header remains consistent across the site
