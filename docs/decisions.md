@@ -77,3 +77,21 @@ Build header navigation dynamically from `PAGES`, filtering `rank >= 1` and sort
 **Implications:**
 - Adding/reordering pages requires only updating `PAGES`
 - Header remains consistent across the site
+
+## 2026-01-07 — Publications Page Architecture & Data Decisions
+
+**Decisions:**
+- Publications are represented using strongly typed domain models (`Publication`, `Author`) stored in `src/types/`.
+- Initial content uses realistic mock data stored in `src/data/publications.ts`.
+- PDFs are accessed via native browser behavior (view in new tab, optional download).
+- Layout uses flex with container-centered alignment flex wrapping.
+- Styling follows Tailwind-first conventions with ordered utility classes.
+
+**Why:**
+- Keeps UI components pure and focused on rendering.
+- Enables easy transition from mock data to database/API.
+- Improves maintainability, consistency, and SEO readiness.
+
+**Implications:**
+- Backend integration can replace mock data without refactoring UI.
+- Patterns established here will be reused for other content-heavy pages.
