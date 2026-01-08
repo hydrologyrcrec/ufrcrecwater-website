@@ -53,6 +53,10 @@ export const logosList: Logos = {
     download: { src: '/publications/download.png', alt: 'Download Icon' },
     journal: { src: '/publications/journal.png', alt: 'Journal Icon' },
     writing: { src: '/publications/writing.png', alt: 'Writing Icon' },
+    menu: { src: '/publications/menu.png', alt: 'Menu Icon' },
+    gradientmenu: { src: '/publications/gradient-menu.png', alt: 'Gradient Menu Icon' },
+    ufifas: { src: '/uf-ifas-logo.jpg', alt: 'UF IFAS Logo' },
+    close: { src: '/publications/close.png', alt: 'Close Icon' }
 }
 
 export const FilterCheckboxOptions : Filter = {

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <main className="bg-(--color-bg) text-(--color-text)] flex justify-center items-center h-screen">
+    <main className="h-screen flex justify-center bg-(--color-bg) text-(--color-text)]">
       <Image 
       src='/wallpaper.png'
       fill
@@ -16,7 +16,7 @@ export default function HomePage() {
       className="z-[-1]"
       >
       </Image>
-      <h1 className="text-5xl font-bold"> {PAGES.home.title} </h1>
+      <h1 className="flex items-center text-5xl text-center font-bold"> {PAGES.home.title} </h1>
     </main>
   );
 }

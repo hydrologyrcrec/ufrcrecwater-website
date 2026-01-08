@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { logosList } from "@/data/publications";
 
 /**
  * HeaderLogo
@@ -12,11 +13,11 @@ export function HeaderLogo() {
     <Link
       href="/"
       aria-label="Go to home"
-      className="shrink-0 rounded-md bg-white "
+      className="shrink-0 bg-white rounded-md"
     >
       <Image
-        src="/uf-ifas-logo.jpg"
-        alt="UF IFAS Logo"
+        src={logosList.ufifas.src}
+        alt={logosList.ufifas.alt}
         width={150}
         height={180}
         className="border-2"

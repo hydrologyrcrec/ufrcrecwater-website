@@ -57,6 +57,10 @@ export type Logos = {
     download: Icon,
     journal: Icon,
     writing: Icon,
+    menu: Icon,
+    gradientmenu: Icon,
+    ufifas: Icon,
+    close: Icon
 }
 
 export type Element = {
