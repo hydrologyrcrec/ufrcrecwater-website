@@ -1,8 +1,3 @@
-export type PubTitle = {
-    id: string
-    title: string
-}
-
 export type Pubdate = {
     date: Date;
 }
@@ -22,11 +17,6 @@ export type PubDownload = {
     filename: string;
     label: string;
 };
-
-export type PubDesc = {
-    id: string;
-    description: string;
-}
 
 export type Author = {
     id: string;
@@ -48,7 +38,7 @@ export type Publication = {
     url: string
     authors: Author []
     journal: string
-    description: string
+    descripton: string
 }
 
 export type PublicationList = {
