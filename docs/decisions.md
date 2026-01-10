@@ -95,3 +95,18 @@ Build header navigation dynamically from `PAGES`, filtering `rank >= 1` and sort
 **Implications:**
 - Backend integration can replace mock data without refactoring UI.
 - Patterns established here will be reused for other content-heavy pages.
+
+## 2026-01-10 — Team Page Architecture & Data Decisions
+
+**Decisions:**
+- Added /team route with page-level metadata pulled from PAGES (page.tsx, navigation.ts).
+- Team roster renders from typed Member domain model and centralized mock data (team.ts), including status icons and tenure formatting.
+- UI uses reusable card primitives plus shared search and sort/filter controls for future interactivity (search.tsx, filter.tsx).
+
+**Why:**
+- Centralized config keeps navigation/SEO consistent and avoids hardcoded strings.
+- Strong typing and mock data isolate UI from backend readiness and make future data sources easy to swap in.
+
+**Implications:**
+- Replacing mock data with API/DB results only needs wiring the Team component props
+- Search/filter controls are present but need real handlers/data plumbing to become functional; styling assumes Tailwind utilities and the existing image assets under /public/team.
