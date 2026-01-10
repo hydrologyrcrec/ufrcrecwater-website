@@ -7,11 +7,13 @@ import PublicationElement from "./element"
 import JournalName from "../ui/publications/journal"
 import { logosList } from "@/data/publications"
 import { Publication } from "@/types/publications"
+import PublicationTitle from "../ui/publications/title"
+import PublicationDescription from "../ui/publications/description"
 
 export default function PublicationCard(props: Publication) {
     return (
         <div key={props.id} className="w-lg h-72 p-3 flex flex-col justify-start bg-[#302370] rounded-2xl overflow-clip">
-            <h2 className="text-xl text-[#DB7E31]">{props.title}</h2>
+            <PublicationTitle id={props.id} title={props.title}></PublicationTitle>
             <div className="flex items-center gap-6 text-sm text-white">
                 <PublicationElement id="PublicationDate" component={<><DatePublished date={props.date}></DatePublished></>} img={logosList.calendar}></PublicationElement>
                 <PublicationElement id="PublicationLink" component={<><ExternalLink url={props.url} label="Publication"></ExternalLink></>} img={logosList.link}></PublicationElement>
@@ -20,7 +22,7 @@ export default function PublicationCard(props: Publication) {
             </div>
             <PublicationElement id="AuthorsList" component={<AuthorsList authors={props.authors}></AuthorsList>} img={logosList.writing}></PublicationElement>
             <PublicationElement id="Journal" component={<JournalName name={props.journal}></JournalName>} img={logosList.journal}></PublicationElement>
-            <p className="text-sm text-[#808080] overflow-scroll">{props.descripton}</p>
+            <PublicationDescription id={props.id} description={props.description}></PublicationDescription>
         </div>  
     )
 }
