@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { logosList } from "@/data/publications";
-import { menuProps } from "../../header/header";
+import { menuProps } from "../../layout/Header";
 
 export function MenuLogo(props: menuProps) {
   return (

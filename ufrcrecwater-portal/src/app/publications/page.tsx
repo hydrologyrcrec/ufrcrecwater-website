@@ -10,6 +10,6 @@ export const metadata: Metadata = {
 
 export default function PublicationsPage() {
   return (
-    <Publications publications={publicationsMockData.publications}></Publications>
+    <Publications publications={publicationsMockData}></Publications>
   );
 };
