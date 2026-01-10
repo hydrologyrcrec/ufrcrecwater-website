@@ -1,0 +1,7 @@
+import { MemTitle } from "@/types/team";
+
+export default function MemberTitle(props: MemTitle){
+    return (
+        <h2 key={props.id + "_title"} className="text-lg font-semibold text-[#DB7E31]">{props.title}</h2>
+    )
+}
