@@ -24,3 +24,19 @@ npx create-next-app@latest research-portal \
 ✔ Would you like to use React Compiler? … No / Yes -> Choose No
 
 ✔ Would you like to use Tailwind CSS? … No / Yes -> Choose Yes
+
+## AWS RDS PostgreSQL setup
+
+**Goal:**
+Setting up AWS RDS PostgreSQL using Terraform IAC
+
+**Command used:**
+```bash
+cd infra/terraform/envs/prod
+```
+
+```bash
+terraform init
+terraform plan
+terraform apply
+```
