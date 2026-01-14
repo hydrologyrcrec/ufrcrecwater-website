@@ -110,3 +110,20 @@ Build header navigation dynamically from `PAGES`, filtering `rank >= 1` and sort
 **Implications:**
 - Replacing mock data with API/DB results only needs wiring the Team component props
 - Search/filter controls are present but need real handlers/data plumbing to become functional; styling assumes Tailwind utilities and the existing image assets under /public/team.
+
+## 2026-01-12 — Primary Database Architecture (AWS RDS)
+
+### Decisions
+- Amazon RDS for PostgreSQL was selected as the primary database due to scale and simplicity.
+- Two-AZ deployment was chosen with individual private subnets.
+- The database is not publicly accessible and has no NAT gateway.
+- Infrastructure is provisioned and managed using Terraform (IaC).
+
+### Why
+- The application workload is read-heavy with low to moderate traffic (<100k rows), making Aurora unnecessary.
+- A private-only database minimizes attack surface and enforces network-level security.
+- Terraform ensures reproducibility, auditability, and controlled evolution of infrastructure.
+
+### Implications
+- Amplify has no outbound internet access when VPC access is enabled by design.
+- This architecture prioritizes cost efficiency and clarity over redundancy.
