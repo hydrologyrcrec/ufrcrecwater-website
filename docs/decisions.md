@@ -127,3 +127,25 @@ Build header navigation dynamically from `PAGES`, filtering `rank >= 1` and sort
 ### Implications
 - Amplify has no outbound internet access when VPC access is enabled by design.
 - This architecture prioritizes cost efficiency and clarity over redundancy.
+
+## 2026-01-15 — Database Schema Management with Prisma ORM
+
+### Decisions
+- Prisma ORM selected as the database access layer for PostgreSQL (AWS RDS).
+- Database schema defined declaratively in schema.prisma.
+- All schema changes applied via Prisma migrations.
+- Local development uses a separate dev database.
+- Production and staging databases use prisma migrate deploy.
+- No manual schema changes allowed in RDS.
+- Database connection configured via DATABASE_URL environment variable.
+- Migrations and schema files are committed to version control.
+
+### Why
+- Ensures schema changes are reproducible, reviewable, and auditable.
+- Prevents schema drift across environments.
+- Keeps application code and database schema strongly typed and in sync.
+- Separates development workflows from production-safe deployment workflows.
+
+### Implications
+- Schema evolution must always go through migrations.
+- Production databases are never modified interactively.

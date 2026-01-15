@@ -40,3 +40,30 @@ terraform init
 terraform plan
 terraform apply
 ```
+
+## Prisma Setup
+
+**Goal:**
+Setting up prisma ORM for db migrations
+
+**Command used:**
+```bash
+# Initial Files Setup
+npm install prisma @prisma/client
+npx prisma init
+```
+
+```bash
+# for dev migrations
+npx prisma migrate dev --name <description>
+```
+
+```bash
+# for Prod migrations
+npx prisma migrate deploy
+```
+
+```bash
+# Accessing prisma ORM
+npx prisma studio
+```

@@ -19,18 +19,18 @@ Static assets and uploads are stored in S3.
 ---
 
 ## Folder Responsibilities
-- `src/app` — routing, layouts, pages, server actions
-- `src/components` — reusable UI components
-- `src/lib` — shared logic (db, auth, config)
-- `migrations/` — database schema evolution
-- `scripts/` — repeatable operational workflows
 - `docs/` — documentation and decisions
+- `infra/` - cloud resources setup
+- `prisma/` - ORM setup for db migrations
+- `scripts/` — repeatable operational workflows
+- `ufrcrecwater-portal/src/app` — routing, layouts, pages, server actions
+- `ufrcrecwater-portal/src/components` — reusable UI components
+- `ufrcrecwater-portal/src/lib` — shared logic (db, auth, config)
 
 ---
 
 ## Environments
 - `dev` — local development
-- `staging` — pre-production validation
 - `prod` — production deployment
 
 Each environment uses isolated databases and resources.
