@@ -95,3 +95,57 @@ Build header navigation dynamically from `PAGES`, filtering `rank >= 1` and sort
 **Implications:**
 - Backend integration can replace mock data without refactoring UI.
 - Patterns established here will be reused for other content-heavy pages.
+
+## 2026-01-10 — Team Page Architecture & Data Decisions
+
+**Decisions:**
+- Added /team route with page-level metadata pulled from PAGES (page.tsx, navigation.ts).
+- Team roster renders from typed Member domain model and centralized mock data (team.ts), including status icons and tenure formatting.
+- UI uses reusable card primitives plus shared search and sort/filter controls for future interactivity (search.tsx, filter.tsx).
+
+**Why:**
+- Centralized config keeps navigation/SEO consistent and avoids hardcoded strings.
+- Strong typing and mock data isolate UI from backend readiness and make future data sources easy to swap in.
+
+**Implications:**
+- Replacing mock data with API/DB results only needs wiring the Team component props
+- Search/filter controls are present but need real handlers/data plumbing to become functional; styling assumes Tailwind utilities and the existing image assets under /public/team.
+
+## 2026-01-12 — Primary Database Architecture (AWS RDS)
+
+### Decisions
+- Amazon RDS for PostgreSQL was selected as the primary database due to scale and simplicity.
+- Two-AZ deployment was chosen with individual private subnets.
+- The database is not publicly accessible and has no NAT gateway.
+- Infrastructure is provisioned and managed using Terraform (IaC).
+
+### Why
+- The application workload is read-heavy with low to moderate traffic (<100k rows), making Aurora unnecessary.
+- A private-only database minimizes attack surface and enforces network-level security.
+- Terraform ensures reproducibility, auditability, and controlled evolution of infrastructure.
+
+### Implications
+- Amplify has no outbound internet access when VPC access is enabled by design.
+- This architecture prioritizes cost efficiency and clarity over redundancy.
+
+## 2026-01-15 — Database Schema Management with Prisma ORM
+
+### Decisions
+- Prisma ORM selected as the database access layer for PostgreSQL (AWS RDS).
+- Database schema defined declaratively in schema.prisma.
+- All schema changes applied via Prisma migrations.
+- Local development uses a separate dev database.
+- Production and staging databases use prisma migrate deploy.
+- No manual schema changes allowed in RDS.
+- Database connection configured via DATABASE_URL environment variable.
+- Migrations and schema files are committed to version control.
+
+### Why
+- Ensures schema changes are reproducible, reviewable, and auditable.
+- Prevents schema drift across environments.
+- Keeps application code and database schema strongly typed and in sync.
+- Separates development workflows from production-safe deployment workflows.
+
+### Implications
+- Schema evolution must always go through migrations.
+- Production databases are never modified interactively.

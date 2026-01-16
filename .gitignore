@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Terraform
+*.tfvars
+*.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+/generated/prisma

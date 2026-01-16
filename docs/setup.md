@@ -24,3 +24,46 @@ npx create-next-app@latest research-portal \
 ✔ Would you like to use React Compiler? … No / Yes -> Choose No
 
 ✔ Would you like to use Tailwind CSS? … No / Yes -> Choose Yes
+
+## AWS RDS PostgreSQL setup
+
+**Goal:**
+Setting up AWS RDS PostgreSQL using Terraform IAC
+
+**Command used:**
+```bash
+cd infra/terraform/envs/prod
+```
+
+```bash
+terraform init
+terraform plan
+terraform apply
+```
+
+## Prisma Setup
+
+**Goal:**
+Setting up prisma ORM for db migrations
+
+**Command used:**
+```bash
+# Initial Files Setup
+npm install prisma @prisma/client
+npx prisma init
+```
+
+```bash
+# for dev migrations
+npx prisma migrate dev --name <description>
+```
+
+```bash
+# for Prod migrations
+npx prisma migrate deploy
+```
+
+```bash
+# Accessing prisma ORM
+npx prisma studio
+```
