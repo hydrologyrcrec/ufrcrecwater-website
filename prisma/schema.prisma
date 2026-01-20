@@ -20,10 +20,10 @@ enum RoleType {
 }
 
 model User {
-  id          String        @id @default(uuid())
-  user_name   String        @unique
-  created_at DateTime      @default(now())
-  updated_at DateTime      @updatedAt
+  id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_name   String      @unique
+  created_at  DateTime    @default(now())
+  updated_at  DateTime    @updatedAt @default(now())
 
   contact     Contact?
   roles       UserRole[]
@@ -32,28 +32,28 @@ model User {
 }
 
 model Contact {
-  user_id    String   @id
+  user_id    String   @id @db.Uuid
   email      String   @unique
   created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  updated_at DateTime @updatedAt @default(now())
 
   user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
 }
 
 model Role {
-  id         String     @id @default(uuid())
-  role_id    RoleType @unique
+  id         String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  role_id    RoleType   @unique
   created_at DateTime   @default(now())
-  updated_at DateTime   @updatedAt
+  updated_at DateTime   @updatedAt @default(now())
 
   users UserRole[]
 }
 
 model UserRole {
-  user_id String
-  role_id String
+  user_id String   @db.Uuid
+  role_id String   @db.Uuid
   created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  updated_at DateTime @updatedAt @default(now())
 
   user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
   role Role @relation(fields: [role_id], references: [id], onDelete: Cascade)
@@ -62,50 +62,49 @@ model UserRole {
 }
 
 model TeamMember {
-  user_id       String   @id
+  user_id       String   @id @db.Uuid
   tenure_start  DateTime
   tenure_end    DateTime?
   status        String
   description   String?
   photo_s3_url  String?
   created_at    DateTime @default(now())
-  updated_at    DateTime @updatedAt
+  updated_at    DateTime @updatedAt @default(now())
 
   user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
 }
 
 model Journal {
-  id           String        @id @default(uuid())
+  id           String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   journal_name String
   journal_url  String?
   created_at   DateTime      @default(now())
-  updated_at   DateTime      @updatedAt
+  updated_at   DateTime      @updatedAt @default(now())
 
   publications Publication[]
 }
 
 model Publication {
-  id              String   @id @default(uuid())
-  journal_id      String
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  journal_id      String   @db.Uuid
   publication_url String
   pdf_s3_url      String
   date_published  DateTime
   created_at      DateTime @default(now())
-  updated_at      DateTime @updatedAt
+  updated_at      DateTime @updatedAt @default(now())
 
   journal Journal @relation(fields: [journal_id], references: [id], onDelete: Cascade)
   authors Author[]
 }
 
 model Author {
-  user_id        String
-  publication_id String
+  user_id        String   @db.Uuid
+  publication_id String   @db.Uuid
   created_at     DateTime @default(now())
-  updated_at     DateTime @updatedAt
+  updated_at     DateTime @updatedAt @default(now())
 
   user        User        @relation(fields: [user_id], references: [id], onDelete: Cascade)
   publication Publication @relation(fields: [publication_id], references: [id], onDelete: Cascade)
 
   @@id([user_id, publication_id])
 }
-
