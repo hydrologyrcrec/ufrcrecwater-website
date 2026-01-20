@@ -19,6 +19,11 @@ enum RoleType {
   author
 }
 
+enum Status {
+  current
+  former
+}
+
 model User {
   id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   user_name   String      @unique
@@ -63,9 +68,10 @@ model UserRole {
 
 model TeamMember {
   user_id       String   @id @db.Uuid
+  position         String
   tenure_start  DateTime
   tenure_end    DateTime?
-  status        String
+  status        Status
   description   String?
   photo_s3_url  String?
   created_at    DateTime @default(now())
