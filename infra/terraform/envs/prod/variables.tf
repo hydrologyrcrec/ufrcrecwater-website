@@ -30,5 +30,5 @@ variable "az1" {
 variable "az2" {
   type        = string
   description = "AZ 2 for deployment"
-  default     = "us-east-1"
+  default     = "us-east-1b"
 }
