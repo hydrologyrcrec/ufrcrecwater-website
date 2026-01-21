@@ -1,24 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { prisma } from "@/lib/prisma";
-
-import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-
-const s3 = new S3Client({ region: "us-east-1" });
-
-export async function generateDownloadUrl(key: string) {
-  const command = new GetObjectCommand({
-    Bucket: process.env.S3_BUCKET!,
-    Key: key,
-  });
-
-  const url = await getSignedUrl(s3, command, {
-    expiresIn: 60 * 5, // 5 minutes
-  });
-
-  return url;
-}
+import prisma from "../../../../lib/prisma";
+import { generateDownloadUrl } from "../../../../lib/aws/s3";
 
 export async function GET() {
   try {
