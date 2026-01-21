@@ -22,8 +22,8 @@ export function HeaderNav() {
       className={[
         // WHY: Gradient background exactly as requested
         "xl:flex hidden h-16 flex-1 items-center rounded-md", 
-        "text-white",
-        "bg-[linear-gradient(90deg,#13137A_0%,#533562_50%,#FF9123_100%)]",
+        "text-[#DB7E31]",
+        "bg-[#302370]",
         // WHY: On small screens, allow horizontal scroll rather than wrapping into ugly rows
         "whitespace-nowrap",
       ].join(" ")}

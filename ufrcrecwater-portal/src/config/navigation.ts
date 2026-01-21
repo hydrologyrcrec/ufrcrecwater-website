@@ -41,7 +41,7 @@ export const PAGES : Pages = {
     research: {
         heading: "Research",
         title: "Ongoing Research Areas",
-        description: "Overview of active research areas, and ongoing projects under Dr. Golmar Golmohammadi.",
+        description: "Overview of current research areas, and ongoing projects under Dr. Golmar Golmohammadi.",
         rank: 1,
         href: "/research",
     },

@@ -10,6 +10,6 @@ export function formatDateLong(date: Date): string {
 
 export default function DatePublished(props: Pubdate) {
     return (
-        <p key={props.date.toISOString()}>{formatDateLong(props.date)}</p>
+        <p key={props.date_published.toISOString()}>{formatDateLong(props.date_published)}</p>
     )
 }
