@@ -50,7 +50,6 @@ model TeamMember {
   tenure_start DateTime
   tenure_end   DateTime?
   description  String?
-  photo_s3_url String?
   created_at   DateTime  @default(now())
   updated_at   DateTime  @default(now()) @updatedAt
   position     String
@@ -73,7 +72,6 @@ model Publication {
   publication_title String  @default("Title")
   publication_url String
   publication_desc String @default("Publication")
-  pdf_s3_url      String
   date_published  DateTime
   created_at      DateTime @default(now())
   updated_at      DateTime @default(now()) @updatedAt
