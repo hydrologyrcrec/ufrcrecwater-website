@@ -6,6 +6,11 @@ import { generateDownloadUrl } from "../../../../lib/aws/s3";
 export async function GET() {
   try {
     const publications = await prisma.publication.findMany({
+      where: {
+        authors: {
+          some: {},
+        },
+      },
       include: {
         journal: {
           select: {
@@ -41,10 +46,12 @@ export async function GET() {
           publication_desc: pub.publication_desc,
           s3_url: await generateDownloadUrl(`Publications/${pub.id}`),
           date_published: pub.date_published,
-          authors: pub.authors.map((author: AuthorWithRelations) => ({
-            user_id: author.user.id,
-            user_name: author.user.user_name,
-          })),
+          authors: pub.authors
+          .filter(author => author.user) // 🔑 CRITICAL
+          .map(author => ({
+            user_id: author.user!.id,
+            user_name: author.user!.user_name,
+          })),        
         }))
       ),
     };
