@@ -13,12 +13,12 @@ export type PubLink = {
 }
 
 export type PubView = {
-    publication_url: string;
+    s3_url: string;
     label: string;
 };
 
 export type PubDownload = {
-    publication_url: string;
+    s3_url: string;
     filename: string;
     label: string;
 };
@@ -48,6 +48,7 @@ export type Publication = {
     publication_title: string
     publication_url: string
     publication_desc: string
+    s3_url: string
     date_published: Date
     authors: Author []
 }

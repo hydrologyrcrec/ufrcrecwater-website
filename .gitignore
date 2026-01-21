@@ -41,4 +41,4 @@ next-env.d.ts
 .terraform.lock.hcl
 *.tfstate
 *.tfstate.backup
-/generated/prisma
+*/generated/prisma

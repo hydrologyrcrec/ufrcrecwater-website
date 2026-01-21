@@ -8,6 +8,7 @@ export const publicationsMockData: PublicationList = {
       publication_title: "Highly accurate protein structure prediction with AlphaFold",
       date_published: new Date("2021-07-15"),
       publication_url: "https://www.nature.com/articles/s41586-021-03819-2",
+      s3_url: "https://www.nature.com/articles/s41586-021-03819-2.pdf",
       authors: [
         { user_id: "john-jumper", user_name: "John Jumper" },
         { user_id: "richard-evans", user_name: "Richard Evans" },
@@ -25,6 +26,7 @@ export const publicationsMockData: PublicationList = {
       publication_title: "Search-and-replace genome editing without double-strand breaks or donor DNA",
       date_published: new Date("2019-10-21"),
       publication_url: "https://www.nature.com/articles/s41586-019-1711-4",
+      s3_url: "https://www.nature.com/articles/s41586-019-1711-4.pdf",
       authors: [
         { user_id: "andrew-v-anzalone", user_name: "Andrew V. Anzalone" },
         { user_id: "peyton-b-randolph", user_name: "Peyton B. Randolph" },
@@ -42,6 +44,7 @@ export const publicationsMockData: PublicationList = {
       publication_title: "A single-cell transcriptomic atlas characterizes ageing tissues in the mouse",
       date_published: new Date("2020-07-15"),
       publication_url: "https://www.nature.com/articles/s41586-020-2496-1",
+      s3_url: "https://www.nature.com/articles/s41586-020-2496-1.pdf",
       authors: [{ user_id: "tabula-muris-consortium", user_name: "The Tabula Muris Consortium" }],
       journal_id: "nature",
       journal_name: "Nature",

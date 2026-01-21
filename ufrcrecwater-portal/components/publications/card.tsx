@@ -17,8 +17,8 @@ export default function PublicationCard(props: Publication) {
             <div className="flex items-center gap-6 text-sm text-white">
                 <PublicationElement id="PublicationDate" component={<><DatePublished date_published={props.date_published}></DatePublished></>} img={logosList.calendar}></PublicationElement>
                 <PublicationElement id="PublicationLink" component={<><ExternalLink publication_url={props.publication_url} label="Publication"></ExternalLink></>} img={logosList.link}></PublicationElement>
-                <PublicationElement id="ViewPublication" component={<><ViewPdf publication_url={props.publication_url} label="View"></ViewPdf></>} img={logosList.view}></PublicationElement>
-                <PublicationElement id="DownloadPublication" component={<><DownloadPdf publication_url={props.publication_url} label="Download" filename={props.publication_title}></DownloadPdf></>} img={logosList.download}></PublicationElement>
+                <PublicationElement id="ViewPublication" component={<><ViewPdf s3_url={props.s3_url} label="View"></ViewPdf></>} img={logosList.view}></PublicationElement>
+                <PublicationElement id="DownloadPublication" component={<><DownloadPdf s3_url={props.s3_url} label="Download" filename={props.publication_title}></DownloadPdf></>} img={logosList.download}></PublicationElement>
             </div>
             <PublicationElement id="AuthorsList" component={<AuthorsList authors={props.authors}></AuthorsList>} img={logosList.writing}></PublicationElement>
             <PublicationElement id="Journal" component={<JournalName journal_name={props.journal_name}></JournalName>} img={logosList.journal}></PublicationElement>
