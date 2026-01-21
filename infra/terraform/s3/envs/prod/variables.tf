@@ -1,3 +1,8 @@
+# Declares all configurable inputs (project name, AWS amplify role ARN)
+# Avoids hardcoding
+# Separates configuration from infrastructure logic
+# Enables reuse and environment parity later
+
 variable "project_name" {
   description = "Project name used for naming resources"
   type        = string

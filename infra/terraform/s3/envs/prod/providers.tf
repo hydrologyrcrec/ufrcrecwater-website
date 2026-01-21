@@ -1,5 +1,10 @@
+# Pins Terraform and AWS provider versions
+# Tells Terraform which cloud and which region to operate in
+# Prevents breaking changes
+# Ensures reproducible infra across machines
+
 terraform {
-  required_version = ">= 1.6.0"
+  required_version = ">= 1.5.0"
 
   required_providers {
     aws = {
