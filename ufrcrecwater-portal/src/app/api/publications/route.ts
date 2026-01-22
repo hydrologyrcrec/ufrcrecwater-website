@@ -47,8 +47,8 @@ export async function GET() {
           s3_url: await generateDownloadUrl(`Publications/${pub.id}`),
           date_published: pub.date_published,
           authors: pub.authors
-          .filter(author => author.user) // 🔑 CRITICAL
-          .map(author => ({
+          .filter((author: AuthorWithRelations) => author.user) // 🔑 CRITICAL
+          .map((author: AuthorWithRelations) => ({
             user_id: author.user!.id,
             user_name: author.user!.user_name,
           })),        

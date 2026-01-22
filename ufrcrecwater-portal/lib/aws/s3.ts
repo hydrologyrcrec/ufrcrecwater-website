@@ -2,15 +2,26 @@ import "server-only";
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-export const s3 = new S3Client({
-  region: process.env.AWS_REGION!,
-});
+const region = process.env.REGION;
+const bucket = process.env.S3_BUCKET;
+
+// Only instantiate when config is present
+const s3 = region ? new S3Client({ region }) : null;
 
 export async function generateDownloadUrl(key: string) {
-  const command = new GetObjectCommand({
-    Bucket: process.env.S3_BUCKET!,
-    Key: key,
-  });
+  if (!s3 || !bucket) {
+    return null;
+  }
 
-  return getSignedUrl(s3, command, { expiresIn: 300 });
+  try {
+    const command = new GetObjectCommand({
+      Bucket: bucket,
+      Key: key,
+    });
+
+    return await getSignedUrl(s3, command, { expiresIn: 300 });
+  } catch (error) {
+    console.error("Failed to generate S3 download URL", error);
+    return null;
+  }
 }

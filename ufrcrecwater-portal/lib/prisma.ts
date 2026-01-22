@@ -1,18 +1,12 @@
 import { PrismaClient } from "@prisma/client";
-import { PrismaPostgresAdapter } from '@prisma/adapter-ppg'
+import "dotenv/config"
 
-const globalForPrisma = global as unknown as {
-    prisma: PrismaClient
-}
+const globalForPrisma = globalThis as { prisma?: PrismaClient };
 
-const adapter = new PrismaPostgresAdapter({
-  connectionString: process.env.DATABASE_URL!,
-})
+export const prisma = globalForPrisma.prisma ?? new PrismaClient({
+  log: process.env.NODE_ENV === "development" ? ["query", "error"] : ["error"],
+});
 
-const prisma = globalForPrisma.prisma || new PrismaClient({
-  adapter,
-})
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
-
-export default prisma
+export default prisma;
