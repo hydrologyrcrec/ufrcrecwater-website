@@ -12,9 +12,9 @@ import PublicationDescription from "../ui/publications/description"
 
 export default function PublicationCard(props: Publication) {
     return (
-        <div key={props.id} className="w-lg h-72 p-3 flex flex-col justify-start bg-[#302370] rounded-2xl overflow-clip">
+        <div key={props.id} className="w-3/5 h-max p-4 flex flex-col justify-start bg-[#302370] rounded-2xl overflow-clip">
             <PublicationTitle id={props.id} publication_title={props.publication_title}></PublicationTitle>
-            <div className="flex items-center gap-6 text-sm text-white">
+            <div className="flex justify-between text-sm text-white">
                 <PublicationElement id="PublicationDate" component={<><DatePublished date_published={props.date_published}></DatePublished></>} img={logosList.calendar}></PublicationElement>
                 <PublicationElement id="PublicationLink" component={<><ExternalLink publication_url={props.publication_url} label="Publication"></ExternalLink></>} img={logosList.link}></PublicationElement>
                 <PublicationElement id="ViewPublication" component={<><ViewPdf s3_url={props.s3_url} label="View"></ViewPdf></>} img={logosList.view}></PublicationElement>
