@@ -8,6 +8,6 @@ export const metadata: Metadata = {
   
 export default function DataPage() {
   return (
-    <h1> {PAGES.data.title} </h1>
+    <h1 className="p-25"> {PAGES.data.title} Under Progress </h1>
   );
 };

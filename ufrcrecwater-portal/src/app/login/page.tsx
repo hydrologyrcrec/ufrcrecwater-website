@@ -13,6 +13,6 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <h1> {PAGES.login.title} </h1>
+    <h1 className="p-25"> {PAGES.login.title} Under Progress </h1>
   );
 };
