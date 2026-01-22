@@ -1,90 +1,93 @@
+-- Ensure uuid generation is available
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
 -- CreateEnum
 CREATE TYPE "RoleType" AS ENUM ('admin', 'team', 'author');
 
 -- CreateTable
 CREATE TABLE "User" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "user_name" TEXT NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Contact" (
-    "user_id" TEXT NOT NULL,
+    "user_id" UUID NOT NULL,
     "email" TEXT NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Contact_pkey" PRIMARY KEY ("user_id")
 );
 
 -- CreateTable
 CREATE TABLE "Role" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "role_id" "RoleType" NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Role_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "UserRole" (
-    "user_id" TEXT NOT NULL,
-    "role_id" TEXT NOT NULL,
+    "user_id" UUID NOT NULL,
+    "role_id" UUID NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "UserRole_pkey" PRIMARY KEY ("user_id","role_id")
 );
 
 -- CreateTable
 CREATE TABLE "TeamMember" (
-    "user_id" TEXT NOT NULL,
+    "user_id" UUID NOT NULL,
     "tenure_start" TIMESTAMP(3) NOT NULL,
     "tenure_end" TIMESTAMP(3),
     "status" TEXT NOT NULL,
     "description" TEXT,
     "photo_s3_url" TEXT,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "TeamMember_pkey" PRIMARY KEY ("user_id")
 );
 
 -- CreateTable
 CREATE TABLE "Journal" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "journal_name" TEXT NOT NULL,
     "journal_url" TEXT,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Journal_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Publication" (
-    "id" TEXT NOT NULL,
-    "journal_id" TEXT NOT NULL,
+    "id" UUID NOT NULL DEFAULT gen_random_uuid(),
+    "journal_id" UUID NOT NULL,
     "publication_url" TEXT NOT NULL,
     "pdf_s3_url" TEXT NOT NULL,
     "date_published" TIMESTAMP(3) NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Publication_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Author" (
-    "user_id" TEXT NOT NULL,
-    "publication_id" TEXT NOT NULL,
+    "user_id" UUID NOT NULL,
+    "publication_id" UUID NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3) NOT NULL,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Author_pkey" PRIMARY KEY ("user_id","publication_id")
 );

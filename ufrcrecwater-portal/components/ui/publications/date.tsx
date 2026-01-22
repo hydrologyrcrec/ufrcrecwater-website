@@ -9,7 +9,8 @@ export function formatDateLong(date: Date): string {
   }
 
 export default function DatePublished(props: Pubdate) {
+    const date = new Date(props.date_published);
     return (
-        <p key={props.date.toISOString()}>{formatDateLong(props.date)}</p>
+        <p key={date.toISOString()}>{formatDateLong(date)}</p>
     )
 }

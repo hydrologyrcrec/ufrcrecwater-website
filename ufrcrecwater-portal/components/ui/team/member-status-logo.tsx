@@ -6,10 +6,11 @@ export default function MemberStatus(props: MemStatus){
     return (
         <Image
         key={props.id + "_status"}
-        src = {props.status === "Active" ? logosList.active.src : logosList.former.src}
+        src = {props.userStatus === "current" ? logosList.current.src : logosList.former.src}
         height={20}
         width={28}
-        alt = {props.status === "Active" ? logosList.active.alt : logosList.former.alt}
+        alt = {props.userStatus === "current" ? logosList.current.alt : logosList.former.alt}
+        className="object-contain"
         ></Image>
     )
 }

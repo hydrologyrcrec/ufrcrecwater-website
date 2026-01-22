@@ -10,7 +10,7 @@ export default function Team (props: MembersList){
             <Search label="PublicationSearch" placeholder="Search by Member Name or Title"></Search>
             <FilterSort {...FilterCheckboxOptions}></FilterSort>
             {props.members.map((member)=> 
-                <MemberCard key={member.id + "_card"} {...member}></MemberCard>
+                <MemberCard key={member.user_id + "_card"} {...member}></MemberCard>
             )}
         </div>
     )

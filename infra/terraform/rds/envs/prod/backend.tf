@@ -7,8 +7,9 @@
 terraform {
   backend "s3" {
     bucket         = "ufrcrecwater-terraform-state"
-    key            = "prod/terraform.tfstate"
+    key            = "rds/prod/terraform.tfstate"
     region         = "us-east-1"
+    dynamodb_table = "ufrcrecwater-terraform-locks" # optional if you use state locking
     encrypt        = true
   }
 }

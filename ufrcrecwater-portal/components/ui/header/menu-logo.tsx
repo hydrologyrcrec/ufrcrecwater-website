@@ -5,8 +5,8 @@ import { menuProps } from "../../header/header";
 export function MenuLogo(props: menuProps) {
   return (
       <Image
-        src={props.menuStatusProp? logosList.close.src : logosList.gradientmenu.src}
-        alt={props.menuStatusProp? logosList.close.alt : logosList.gradientmenu.alt}
+        src={props.menuStatusProp? logosList.close.src : logosList.purplemenu.src}
+        alt={props.menuStatusProp? logosList.close.alt : logosList.purplemenu.alt}
         width={props.menuStatusProp? 40: 30}
         height={props.menuStatusProp? 40: 30}
         className={`xl:hidden ${props.menuStatusProp && "fixed z-4 pr-6"}`}

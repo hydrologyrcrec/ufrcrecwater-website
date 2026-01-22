@@ -1,6 +1,6 @@
 export type MemName = {
     id: string 
-    name: string
+    userName: string
 }
 
 export type MemPic = {
@@ -13,7 +13,7 @@ export type MemPic = {
 
 export type MemTitle = {
     id: string
-    title: string
+    position: string
 }
 
 export type MemDesc = {
@@ -23,24 +23,24 @@ export type MemDesc = {
 
 export type MemStatus = {
     id: string
-    status: string
+    userStatus: string
 }
 
 export type MemTenure = {
     id: string,
-    start: Date,
-    end: Date | "Present"
+    tenureStart: Date,
+    tenureEnd: Date | "Present"
 }
 
 export type Member = {
-    id: string,
-    name: string,
-    title: string,
-    start: Date,
-    end: Date | "Present",
+    user_id: string,
+    user_name: string,
+    position: string,
+    tenure_start: Date,
+    tenure_end: Date | "Present",
     status: string,
     description: string,
-    imageUrl: string
+    s3_url: string
 }
 
 export type MembersList = {
@@ -53,6 +53,6 @@ export type Icon = {
 }
 
 export type Logos = {
-    active: Icon,
+    current: Icon,
     former: Icon
 }

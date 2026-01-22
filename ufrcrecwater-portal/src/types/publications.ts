@@ -1,36 +1,36 @@
 export type PubTitle = {
     id: string
-    title: string
+    publication_title: string
 }
 
 export type Pubdate = {
-    date: Date;
+    date_published: Date;
 }
 
 export type PubLink = {
-    url: string
+    publication_url: string
     label: string
 }
 
 export type PubView = {
-    url: string;
+    s3_url: string;
     label: string;
 };
 
 export type PubDownload = {
-    url: string;
+    s3_url: string;
     filename: string;
     label: string;
 };
 
 export type PubDesc = {
     id: string;
-    description: string;
+    publication_desc: string;
 }
 
 export type Author = {
-    id: string;
-    name: string;
+    user_id: string;
+    user_name: string;
 };
 
 export type Authors = {
@@ -38,17 +38,21 @@ export type Authors = {
 };
 
 export type Journal = {
-    name: string;
+    journal_name: string;
+    journal_url: string
 }
 
 export type Publication = {
     id: string
-    title: string
-    date: Date
-    url: string
+    journal_id: String
+    journal_name: string
+    journal_url: string
+    publication_title: string
+    publication_url: string
+    publication_desc: string
+    s3_url: string
+    date_published: Date
     authors: Author []
-    journal: string
-    description: string
 }
 
 export type PublicationList = {
@@ -69,6 +73,7 @@ export type Logos = {
     writing: Icon,
     menu: Icon,
     gradientmenu: Icon,
+    purplemenu: Icon,
     ufifas: Icon,
     close: Icon
 }

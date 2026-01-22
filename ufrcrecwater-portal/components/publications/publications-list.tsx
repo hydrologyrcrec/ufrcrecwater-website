@@ -6,7 +6,7 @@ import FilterSort from "../ui/publications/filter";
 
 export default function Publications (props: PublicationList){
     return (
-        <div className="p-25 flex flex-wrap justify-center gap-6 font-bold">
+        <div className="p-25 h-screen flex flex-wrap justify-center gap-6 font-bold">
             <Search label="PublicationSearch" placeholder="Search by Research Name, Author, Journal, or Date of Publication, etc"></Search>
             <FilterSort {...FilterCheckboxOptions}></FilterSort>
             {props.publications.map((publication) => 

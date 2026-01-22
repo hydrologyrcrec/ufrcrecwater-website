@@ -54,7 +54,15 @@ npx prisma init
 ```
 
 ```bash
-# for dev migrations
+# Creating migration first without applying it to the db
+npx prisma migrate dev --create-only
+
+# Once satisfied with the migration, apply it to the db
+npx prisma migrate dev
+```
+
+```bash
+# for direct dev migrations
 npx prisma migrate dev --name <description>
 ```
 
@@ -64,6 +72,11 @@ npx prisma migrate deploy
 ```
 
 ```bash
-# Accessing prisma ORM
+# Generate prisma client for prisma studio
+npx prisma generate
+```
+
+```bash
+# Accessing prisma studio
 npx prisma studio
 ```
