@@ -8,6 +8,6 @@ export const metadata: Metadata = {
 
 export default function InstrumentationPage() {
   return (
-    <h1> {PAGES.instrumentation.title} </h1>
+    <h1 className="p-25 text-center"> {PAGES.instrumentation.title} Under Progress </h1>
   );
 } 

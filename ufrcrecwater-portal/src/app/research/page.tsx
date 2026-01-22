@@ -8,6 +8,6 @@ export const metadata: Metadata = {
 
 export default function ResearchPage() {
   return (
-    <h1> {PAGES.research.title} </h1>
+    <h1 className="p-25 text-center"> {PAGES.research.title} Under Progress </h1>
   );
 }
