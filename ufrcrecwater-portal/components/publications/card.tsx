@@ -21,7 +21,7 @@ export default function PublicationCard(props: Publication) {
                 <PublicationElement id="DownloadPublication" component={<><DownloadPdf s3_url={props.s3_url} label="Download" filename={props.publication_title}></DownloadPdf></>} img={logosList.download}></PublicationElement>
             </div>
             <PublicationElement id="AuthorsList" component={<AuthorsList authors={props.authors}></AuthorsList>} img={logosList.writing}></PublicationElement>
-            <PublicationElement id="Journal" component={<JournalName journal_name={props.journal_name}></JournalName>} img={logosList.journal}></PublicationElement>
+            <PublicationElement id="Journal" component={<JournalName journal_name={props.journal_name} journal_url={props.journal_url}></JournalName>} img={logosList.journal}></PublicationElement>
             <PublicationDescription id={props.id} publication_desc={props.publication_desc}></PublicationDescription>
         </div>  
     )

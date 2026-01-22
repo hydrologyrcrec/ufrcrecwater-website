@@ -39,12 +39,14 @@ export type Authors = {
 
 export type Journal = {
     journal_name: string;
+    journal_url: string
 }
 
 export type Publication = {
     id: string
     journal_id: String
     journal_name: string
+    journal_url: string
     publication_title: string
     publication_url: string
     publication_desc: string
@@ -71,6 +73,7 @@ export type Logos = {
     writing: Icon,
     menu: Icon,
     gradientmenu: Icon,
+    purplemenu: Icon,
     ufifas: Icon,
     close: Icon
 }

@@ -16,6 +16,7 @@ export async function GET() {
           select: {
             id: true,
             journal_name: true,
+            journal_url: true,
           },
         },
         authors: {
@@ -41,13 +42,14 @@ export async function GET() {
           id: pub.id,
           journal_id: pub.journal_id,
           journal_name: pub.journal.journal_name,
+          journal_url: pub.journal.journal_url,
           publication_title: pub.publication_title,
           publication_url: pub.publication_url,
           publication_desc: pub.publication_desc,
-          s3_url: await generateDownloadUrl(`Publications/${pub.id}`),
+          s3_url: await generateDownloadUrl(`Publications/${pub.id}.pdf`),
           date_published: pub.date_published,
           authors: pub.authors
-          .filter((author: AuthorWithRelations) => author.user) // 🔑 CRITICAL
+          .filter((author: AuthorWithRelations) => author.user)
           .map((author: AuthorWithRelations) => ({
             user_id: author.user!.id,
             user_name: author.user!.user_name,
