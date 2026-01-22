@@ -1,6 +1,7 @@
 import "server-only";
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import "dotenv/config";
 
 const region = process.env.REGION;
 const bucket = process.env.S3_BUCKET;
@@ -16,19 +17,20 @@ const s3 = new S3Client({
 
 
 export async function generateDownloadUrl(key: string) {
-  if (!s3 || !bucket) {
-    return null;
-  }
-
   try {
+    console.log("🔍 Attempting to generate presigned URL...");
     const command = new GetObjectCommand({
       Bucket: bucket,
       Key: key,
     });
-
-    return await getSignedUrl(s3, command, { expiresIn: 300 });
-  } catch (error) {
-    console.error("Failed to generate S3 download URL", error);
+    const url = await getSignedUrl(s3, command, { expiresIn: 300 });
+    console.log("✅ SUCCESS - URL GENERATED");
+    return url;
+  } catch (error: any) {
+    console.error("❌ S3 ERROR DETAILS:");
+    console.error("   Name:", error.name);
+    console.error("   Message:", error.message);
+    console.error("   Code:", error.$metadata?.httpStatusCode);
     return null;
   }
 }
