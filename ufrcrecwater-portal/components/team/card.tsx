@@ -8,12 +8,18 @@ import MemberTenure from "../ui/team/member-tenure";
 
 export default function MemberCard(props: Member) {
     return (
-        <div key={props.user_id + "_card"} className="h-112 w-64 p-2 gap-1 flex flex-col items-center rounded-4xl bg-[#302370]">
+        <div key={props.user_id + "_card"} className="h-112 w-64 px-0 py-2 gap-1 flex flex-col items-center rounded-4xl bg-[#302370]">
             <div className="px-1 h-max w-60 flex justify-center items-start">
-                <MemberPicture id={props.user_id} imageUrl={props.user_id} height={300} width={300} alt={props.user_name + "_picture"}></MemberPicture>
+                <MemberPicture
+                    id={props.s3_url}
+                    imageUrl={props.s3_url}
+                    height={300}
+                    width={300}
+                    alt={props.user_name + "_picture"}
+                ></MemberPicture>
             </div>
-            <div className="px-2 flex justify-start gap-2">
-                <MemberName id={props.user_id} userName={props.user_name}></MemberName>
+            <div className="px-2 flex justify-start items-start gap-2">
+                <MemberName id={props.user_id} userName={props.user_name.split(" ").slice(0, 2).join(" ")}></MemberName>
                 <MemberStatus id={props.user_id} userStatus={props.status}></MemberStatus>
             </div>
             <MemberTenure id={props.user_id} tenureStart={props.tenure_start} tenureEnd={props.tenure_end}></MemberTenure>

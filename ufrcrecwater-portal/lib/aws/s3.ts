@@ -6,7 +6,14 @@ const region = process.env.REGION;
 const bucket = process.env.S3_BUCKET;
 
 // Only instantiate when config is present
-const s3 = region ? new S3Client({ region }) : null;
+const s3 = new S3Client({
+  region: region,
+  credentials: {
+    accessKeyId: process.env.MYAPP_AWS_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.MYAPP_AWS_SECRET_ACCESS_KEY!,
+  },
+});
+
 
 export async function generateDownloadUrl(key: string) {
   if (!s3 || !bucket) {

@@ -40,6 +40,7 @@ export type Member = {
     tenure_end: Date | "Present",
     status: string,
     description: string,
+    s3_url: string
 }
 
 export type MembersList = {
