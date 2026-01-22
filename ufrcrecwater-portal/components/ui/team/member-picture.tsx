@@ -9,7 +9,7 @@ export default function MemberPicture(props: MemPic){
         height={props.height}
         width={props.width}
         alt = {props.alt}
-        className="rounded-4xl aspect-square"
+        className="rounded-4xl aspect-square object-cover shadow-gray-600 shadow-xl"
         ></Image>
     )
 }

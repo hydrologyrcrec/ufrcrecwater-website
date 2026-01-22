@@ -8,6 +8,6 @@ export default function MemberTenure(props: MemTenure){
     }
 
     return (
-        <p key={props.id + "_tenure"} className="text-sm font-medium text-[#aeabab] px-2">{"(" +getMonthandYear(props.tenureStart) + " - " + (props.tenureEnd === "Present" ? "Present" : getMonthandYear(props.tenureEnd)) + ")"}</p>
+        <p key={props.id + "_tenure"} className="text-md font-medium text-[#aeabab] px-2">{"(" +getMonthandYear(props.tenureStart) + " - " + (props.tenureEnd === "Present" ? "Present" : getMonthandYear(props.tenureEnd)) + ")"}</p>
     )
 }
