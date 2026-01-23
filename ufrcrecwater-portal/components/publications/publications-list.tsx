@@ -6,13 +6,13 @@ import FilterSort from "../ui/publications/filter";
 
 export default function Publications (props: PublicationList){
     return (
-        <div className="p-25 h-screen flex flex-wrap justify-center gap-6 font-bold">
-            <Search label="PublicationSearch" placeholder="Search by Research Name, Author, Journal, or Date of Publication, etc"></Search>
-            <FilterSort {...FilterCheckboxOptions}></FilterSort>
-            <div className="flex flex-col gap-3 items-center justify-center">
-                {props.publications.map((publication) => 
-                    <PublicationCard key={publication.id} {...publication}></PublicationCard>
-                )}
+        <div className="w-full p-25 flex flex-col items-center gap-6 font-bold">
+            <Search label="PublicationSearch" placeholder="Search by Research Name, Author, Journal, or Date of Publication, etc" />
+            <FilterSort {...FilterCheckboxOptions} />
+            <div className="w-full max-w-6xl flex flex-col gap-6 items-center overflow-auto">
+                {props.publications.map((publication) => (
+                    <PublicationCard key={publication.id} {...publication} />
+                ))}
             </div>
         </div>
     )

@@ -12,7 +12,6 @@ import { usePathname } from "next/navigation";
  */
 export function HeaderNav() {
   const navItems = Object.values(PAGES as Record<string, Page>)
-    .filter((page) => page.rank >= 1)
     .sort((a, b) => a.rank - b.rank);
 
   const pathname = usePathname();

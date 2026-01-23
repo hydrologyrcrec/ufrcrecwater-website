@@ -80,3 +80,13 @@ npx prisma generate
 # Accessing prisma studio
 npx prisma studio
 ```
+
+## Generating Pdf Thumbnails
+
+**Goal:**
+To generate pdf thumbnails, for preview
+
+**Command Used:**
+```bash
+npx tsx lib/pdf-thumbnail/script.ts
+```

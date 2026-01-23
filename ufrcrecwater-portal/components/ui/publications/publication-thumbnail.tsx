@@ -1,7 +1,7 @@
-import { MemPic } from "@/types/team";
+import { PubTnail } from "@/types/publications";
 import Image from "next/image";
 
-export default function MemberPicture(props: MemPic){
+export default function Thumbnail(props: PubTnail){
     return (
         <Image
         key={props.id + "_image"}
@@ -9,7 +9,7 @@ export default function MemberPicture(props: MemPic){
         height={props.height}
         width={props.width}
         alt = {props.alt}
-        className="rounded-l-2xl aspect-square object-contain"
+        className="w-full h-full rounded-l-2xl object-contain"
         ></Image>
     )
 }

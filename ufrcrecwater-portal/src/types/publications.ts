@@ -28,6 +28,14 @@ export type PubDesc = {
     publication_desc: string;
 }
 
+export type PubTnail = {
+    id: string
+    imageUrl: string
+    alt: string
+    height: number
+    width: number
+}
+
 export type Author = {
     user_id: string;
     user_name: string;
