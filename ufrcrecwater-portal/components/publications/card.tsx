@@ -17,7 +17,7 @@ export default function PublicationCard(props: Publication) {
             <div className="h-full w-2/5 flex items-center justify-start shrink-0">
                 <Thumbnail
                     id={props.id + "_image"}
-                    imageUrl={`https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/public/thumbnails/${props.id}.jpg`}
+                    imageUrl={`https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/public/Publications/thumbnails/${props.id}.jpg`}
                     height={500}
                     width={500}
                     alt={props.id + "_picture"}
