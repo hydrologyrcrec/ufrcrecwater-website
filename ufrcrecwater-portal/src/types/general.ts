@@ -22,3 +22,9 @@ export type CheckboxProps = {
 export type Filter = {
     options: CheckboxFilterOption[]
 }
+
+export type Log = {
+    request: string;
+    message: string;
+    success?: boolean;
+}

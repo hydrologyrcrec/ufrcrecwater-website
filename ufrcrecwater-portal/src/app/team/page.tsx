@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PAGES } from "@/config/navigation";
 import Team from "../../../components/team/team-list";
 import type { MembersList, Member } from "@/types/team";
+import { baseURL } from "@/data/constants";
 
 export const metadata: Metadata = {
   title: PAGES.team.title,
@@ -9,12 +10,7 @@ export const metadata: Metadata = {
 };  
 
 async function getMembers(): Promise<MembersList> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
-  const res = await fetch(`${baseUrl}/api/team`, { cache: "no-store" });
-  if (!res.ok) {
-    throw new Error("Failed to fetch team members");
-  }
+  const res = (await fetch(`${baseURL}/team`, { cache: "no-store" }))
   return res.json();
 }
 

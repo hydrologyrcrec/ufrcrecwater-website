@@ -1,41 +1,14 @@
 import { NextResponse } from "next/server";
-
-import prisma from "../../../../lib/prisma";
+import { getPublications } from "../../../../lib/db/publications";
 import { generateDownloadUrl } from "../../../../lib/aws/s3";
+import { logger, serializeError } from "../../../../lib/logger";
 
 export async function GET() {
   try {
-    const publications = await prisma.publication.findMany({
-      where: {
-        authors: {
-          some: {},
-        },
-      },
-      include: {
-        journal: {
-          select: {
-            id: true,
-            journal_name: true,
-            journal_url: true,
-          },
-        },
-        authors: {
-          include: {
-            user: {
-              select: {
-                id: true,
-                user_name: true,
-              },
-            },
-          },
-        },
-      },
-      orderBy: { date_published: "desc" },
-    });
-
+    logger.info({ request: "GET /api/publications", message: "Fetching publications data..." });
+    const publications = await getPublications();
     type PublicationWithRelations = (typeof publications)[number];
     type AuthorWithRelations = PublicationWithRelations["authors"][number];
-
     const payload = {
       publications: await Promise.all(
         publications.map(async (pub: PublicationWithRelations) => ({
@@ -56,14 +29,14 @@ export async function GET() {
           })),        
         }))
       ),
+      success: true,
     };
+    logger.info({request: "GET /api/publications", message: "Successfully fetched publications data", success: true});
 
     return NextResponse.json(payload);
   } catch (error) {
-    console.error("Error fetching publications", error);
-    return NextResponse.json(
-      { error: "Unable to fetch publications" },
-      { status: 500 }
-    );
+    logger.error({ request: "GET /api/publications", message: "Unable to fetch publications data because of an error", success: false },{ error: serializeError(error) });
+    const payload = { message: "Unable to fetch publications", success: false};
+    return NextResponse.json(payload, { status: 500 });
   }
 }

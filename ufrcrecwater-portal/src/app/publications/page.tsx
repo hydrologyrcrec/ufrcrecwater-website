@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PAGES } from "@/config/navigation";
 import Publications from "../../../components/publications/publications-list";
 import type { PublicationList } from "@/types/publications";
+import { baseURL } from "@/data/constants";
 
 export const metadata: Metadata = {
   title: PAGES.publications.title,
@@ -9,16 +10,7 @@ export const metadata: Metadata = {
 };
 
 async function getPublications(): Promise<PublicationList> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
-  const res = await fetch(`${baseUrl}/api/publications`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch publications");
-  }
-
+  const res = (await fetch(`${baseURL}/publications`, { cache: "no-store" }))
   return res.json();
 }
 

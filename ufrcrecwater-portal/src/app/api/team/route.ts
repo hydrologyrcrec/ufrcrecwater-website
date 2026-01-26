@@ -1,25 +1,12 @@
 import { NextResponse } from "next/server";
-
-import prisma from "../../../../lib/prisma";
+import { getTeam } from "../../../../lib/db/team";
 import { generateDownloadUrl } from "../../../../lib/aws/s3";
+import { logger, serializeError } from "../../../../lib/logger";
 
 export async function GET() {
   try {
-    const members = await prisma.teamMember.findMany({
-      include: {
-        user: {
-          select: {
-            id: true,
-            user_name: true,
-          },
-        },
-      },
-      orderBy: [
-        { status: "asc" },        
-        { tenure_start: "asc" },
-      ],
-    });
-
+    logger.info({ request: "GET /api/team", message: "Fetching team members data..."});
+    const members = await getTeam();
     const payload = {
       members: await Promise.all(
         members.map(async (member) => ({
@@ -34,14 +21,14 @@ export async function GET() {
             (await generateDownloadUrl(`Team/${member.user_id}.jpg`))
         }))
       ),
+      success: true
     };
+    logger.info({ request: "GET /api/team", message: "Successfully fetched team members data", success: true });
 
     return NextResponse.json(payload);
   } catch (error) {
-    console.error("Error fetching team members", error);
-    return NextResponse.json(
-      { error: "Unable to fetch team members" },
-      { status: 500 }
-    );
+    logger.error({ request: "GET /api/team", message: "Unable to fetch team members data because of an error", success: false }, { error: serializeError(error) });
+    const payload = { message: "Unable to fetch team members", success: false};
+    return NextResponse.json(payload, { status: 500 });
   }
 }

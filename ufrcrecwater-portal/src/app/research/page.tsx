@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PAGES } from "@/config/navigation";
 import ResearchHistory from "../../../components/research/research-list";
 import type { ResearchList } from "@/types/research";
+import { baseURL } from "@/data/constants";
 
 export const metadata: Metadata = {
   title: PAGES.research.title,
@@ -9,12 +10,7 @@ export const metadata: Metadata = {
 };  
 
 async function getResearch(): Promise<ResearchList> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  
-  const res = await fetch(`${baseUrl}/api/research`, { cache: "no-store" });
-  if (!res.ok) {
-    throw new Error("Failed to fetch research");
-  }
+  const res = (await fetch(`${baseURL}/research`, { cache: "no-store" }))
   return res.json();
 }
 

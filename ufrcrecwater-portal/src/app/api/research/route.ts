@@ -1,14 +1,12 @@
 import { NextResponse } from "next/server";
-
-import prisma from "../../../../lib/prisma";
+import { getResearch } from "../../../../lib/db/research";
 import { generateDownloadUrl } from "../../../../lib/aws/s3";
+import { logger, serializeError } from "../../../../lib/logger";
 
 export async function GET() {
   try {
-    const research = await prisma.research.findMany({
-      orderBy: { updated_at: "desc" },
-    });
-
+    logger.info({request: "GET /api/research", message: "Fetching research data..."});
+    const research = await getResearch();
     const payload = {
       research: await Promise.all(
         research.map(async (item) => ({
@@ -18,14 +16,14 @@ export async function GET() {
           s3_url: await generateDownloadUrl(`Research/${item.id}.jpg`)
         }))
       ),
+      success: true,
     };
+    logger.info({request: "GET /api/research", message: "Successfully fetched research data", success: true});
 
     return NextResponse.json(payload);
   } catch (error) {
-    console.error("Error fetching research", error);
-    return NextResponse.json(
-      { error: "Unable to fetch research" },
-      { status: 500 }
-    );
+    logger.error({request: "GET /api/research", message: "Unable to fetch research data because of an error", success: false}, { error: serializeError(error) });
+    const payload = { message: "Unable to fetch research", success: false};
+    return NextResponse.json(payload, { status: 500 });
   }
 }
