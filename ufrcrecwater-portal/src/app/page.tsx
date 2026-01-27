@@ -4,18 +4,10 @@
  * Layout and styling belong in layout/components, not here.
  */
 import { PAGES } from "@/config/navigation";
-import Image from "next/image";
 
 export default function HomePage() {
   return (
     <main className="h-screen flex justify-center bg-(--color-bg) text-(--color-text)]">
-      <Image 
-      src='/wallpaper.png'
-      fill
-      alt='Website Wallpaper'
-      className="z-[-1]"
-      >
-      </Image>
       <h1 className="flex items-center text-5xl text-center font-bold"> {PAGES.home.title} </h1>
     </main>
   );
