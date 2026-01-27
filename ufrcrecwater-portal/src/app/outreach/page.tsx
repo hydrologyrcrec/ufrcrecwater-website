@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function OutreachPage() {
   return (
-    <h1 className="p-25 text-center"> {PAGES.outreach.title} Under Progress </h1>
+    <h1 className="p-5 text-center"> {PAGES.outreach.title} Under Progress </h1>
   );
 };
   

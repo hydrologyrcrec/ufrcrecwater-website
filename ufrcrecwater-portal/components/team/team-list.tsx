@@ -15,7 +15,7 @@ export default function Team (props: MembersList){
         }
     })
     return (
-        <div className="p-25 flex justify-center flex-wrap gap-6 font-bold">
+        <div className="p-5 flex justify-center flex-wrap gap-6 font-bold">
             <Search label="PublicationSearch" placeholder="Search by Member Name or Title"></Search>
             <FilterSort {...FilterCheckboxOptions}></FilterSort>
             <div className="flex flex-col gap-6 items-center justify-center">
