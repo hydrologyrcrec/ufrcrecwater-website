@@ -12,7 +12,7 @@ export function HeaderMiniNav(props: menuProps) {
     <nav
       aria-label="Primary navigation"
       className={[
-        "xl:hidden fixed z-3 py-20 flex items-start", 
+        "xl:hidden fixed z-8 py-20 flex items-start", 
         "text-white",
         "bg-[linear-gradient(90deg,#13137A_0%,#533562_50%,#FF9123_100%)]",
         "whitespace-nowrap",

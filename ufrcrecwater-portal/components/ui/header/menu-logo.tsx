@@ -9,7 +9,7 @@ export function MenuLogo(props: menuProps) {
         alt={props.menuStatusProp? logosList.close.alt : logosList.purplemenu.alt}
         width={props.menuStatusProp? 40: 30}
         height={props.menuStatusProp? 40: 30}
-        className={`xl:hidden ${props.menuStatusProp && "fixed z-4 pr-6"}`}
+        className={`xl:hidden ${props.menuStatusProp && "fixed z-8 pr-6"}`}
         priority
         onClick={() => props.changeMenuStatusProp(!props.menuStatusProp)}
       />
