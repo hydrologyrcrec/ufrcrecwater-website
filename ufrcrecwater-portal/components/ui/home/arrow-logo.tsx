@@ -1,18 +1,16 @@
 "use client"
 
+import { useUIStore } from "@/store/homeUIStore";
 import { ArrowNavigatorProps, Icon } from "@/types/home";
 import Image from "next/image";
 
 export default function ArrowLogo(props: ArrowNavigatorProps){
+    const {slidesLength, currentSlide, setCurrentSlide, left} = useUIStore();
     function changeSlide(direction: "left" | "right"){
         if(direction === "left"){
-            if(props.slideCurrState.currentSlide === 0){
-                props.slideCurrState.setCurrentSlide(props.slideCurrState.listLength - 1)
-            } else {
-                props.slideCurrState.setCurrentSlide(props.slideCurrState.currentSlide - 1)
-            }
+            currentSlide === 0 ? setCurrentSlide(slidesLength - 1) : left()
         }else{
-            props.slideCurrState.setCurrentSlide((props.slideCurrState.currentSlide + 1)% props.slideCurrState.listLength)
+            setCurrentSlide((currentSlide + 1) % slidesLength)
         }
     }
     return (

@@ -9,7 +9,7 @@ import MemberTenure from "../ui/team/member-tenure";
 export default function MemberCard(props: Member) {
     return (
         <div key={props.user_id + "_card"} className="h-max w-4/5 gap-1 flex items-start justify-between bg-[#302370] rounded-2xl shadow-gray-600 shadow-xl">
-            <div className="h-full flex justify-start items-start object-contain">
+            <div className="h-full flex justify-start items-start">
                 <MemberPicture id={props.s3_url} imageUrl={props.s3_url} height={350} width={350} alt={props.user_name + "_picture"}></MemberPicture>
             </div>
             <div className="h-full w-2/3 m-2 p-2 flex flex-col justify-start items-start rounded-2xl">
