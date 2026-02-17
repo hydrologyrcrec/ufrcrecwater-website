@@ -28,7 +28,7 @@ model Contact {
 
 model Role {
   id         String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  role_id    RoleType   @unique
+  role       RoleType   @unique
   created_at DateTime   @default(now())
   updated_at DateTime   @default(now()) @updatedAt
   users      UserRole[]
