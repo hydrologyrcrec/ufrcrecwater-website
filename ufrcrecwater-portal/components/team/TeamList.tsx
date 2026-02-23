@@ -5,8 +5,8 @@ import FilterSort from "../ui/Filter1";
 import { FilterCheckboxOptions } from "@/data/team";
 
 export default function Team (props: MembersList){
-    const activeMembers = props.members.filter(m => m.status === "current")
-    const formerMembers = props.members.filter(m => m.status === "former")
+    const activeMembers = props.members.filter(m => m.tenure_end === "current")
+    const formerMembers = props.members.filter(m => m.tenure_end !== "current")
     return (
         <div className="p-5 flex justify-center flex-wrap gap-6 font-bold">
             <Search label="PublicationSearch" placeholder="Search by Member Name or Title"></Search>

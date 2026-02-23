@@ -5,10 +5,10 @@ import Image from "next/image";
 export default function MemberStatus(props: MemStatus){
     return (
         <Image
-        src = {props.userStatus === "current" ? logosList.current.src : logosList.former.src}
+        src = {props.status === "current" ? logosList.current.src : logosList.former.src}
         height={20}
         width={28}
-        alt = {props.userStatus === "current" ? logosList.current.alt : logosList.former.alt}
+        alt = {props.status === "current" ? logosList.current.alt : logosList.former.alt}
         className="object-contain"
         ></Image>
     )

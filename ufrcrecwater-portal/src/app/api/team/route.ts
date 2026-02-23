@@ -15,7 +15,6 @@ export async function GET() {
           position: member.position,
           tenure_start: member.tenure_start,
           tenure_end: member.tenure_end ?? "current",
-          status: member.status,
           description: member.description ?? "",
           s3_url:
             (await generateDownloadUrl(`Team/${member.user_id}.jpg`))

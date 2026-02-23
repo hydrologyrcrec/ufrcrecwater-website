@@ -16,18 +16,18 @@ export type MemPic = {
 export type MemTitle = {
     id: string
     position: string
-    status: string
+    status: Date | "current"
 }
 
 export type MemDesc = {
     id: string
     description: string
-    status: string
+    status: Date | "current"
 }
 
 export type MemStatus = {
     id: string
-    userStatus: string
+    status: Date | "current" 
 }
 
 export type MemTenure = {
@@ -42,7 +42,6 @@ export type Member = {
     position: string,
     tenure_start: Date,
     tenure_end: Date | "current",
-    status: string,
     description: string,
     s3_url: string
 }

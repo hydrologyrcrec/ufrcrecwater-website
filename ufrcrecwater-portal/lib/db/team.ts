@@ -10,8 +10,7 @@ export async function getTeam() {
             },
         },
         },
-        orderBy: [
-        { status: "asc" },        
+        orderBy: [        
         { tenure_start: "asc" },
         ],
     });

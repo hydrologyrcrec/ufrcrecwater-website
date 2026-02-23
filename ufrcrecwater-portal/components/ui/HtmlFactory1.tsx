@@ -38,7 +38,7 @@ export type GenericFieldProps = {
   id?: string
   name?: string
   parentClassName?: string
-  elementProps?: React.HTMLAttributes<HTMLInputElement>
+  elementProps?: React.HTMLAttributes<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   children?: React.ReactNode
 }
 

@@ -17,14 +17,14 @@ export default function MemberInfo(props: Member) {
             <div className={`h-full w-2/3 m-2 p-2 flex flex-col justify-start items-start rounded-2xl`}>
                 <div className={`w-full flex justify-start items-start gap-2`}>
                     <MemberName id={props.user_id} userName={props.user_name.split(" ").slice(0, 2).join(" ")}></MemberName>
-                    <MemberStatus id={props.user_id} userStatus={props.status}></MemberStatus>
+                    <MemberStatus id={props.user_id} status={props.tenure_end}></MemberStatus>
                     <AdminOnly>
                         <UpdateDeleteOps id={props.user_id}></UpdateDeleteOps>
                     </AdminOnly>
                 </div>
                 <MemberTenure id={props.user_id} tenureStart={props.tenure_start} tenureEnd={props.tenure_end}></MemberTenure>
-                <MemberTitle id={props.user_id} position={props.position} status={props.status}></MemberTitle>
-                <MemberDescription id={props.user_id} description={props.description} status={props.status}></MemberDescription>
+                <MemberTitle id={props.user_id} position={props.position} status={props.tenure_end}></MemberTitle>
+                <MemberDescription id={props.user_id} description={props.description} status={props.tenure_end}></MemberDescription>
             </div>
         </div>
     )
