@@ -85,7 +85,7 @@ export const PAGES : Pages = {
         title: "News & Updates",
         description: "Latest news, announcements, and highlights from the research group led by Dr. Golmar Golmohammadi.",
         rank: 7,
-        href: "/news",
+        href: "/news-1",
     },
     conferences: {
         heading: "Conferences",

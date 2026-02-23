@@ -1,16 +1,6 @@
 import { Slides } from '@/types/home'
+import { HomeState } from '@/types/state'
 import { create } from 'zustand'
-
-type HomeState = {
-    slidesLength: number
-    currentSlide: number
-    data: Slides
-    setSlidesData: (data: Slides) => void
-    setSlidesLength: (length: number) => void
-    setCurrentSlide: (slide: number) => void
-    left: () => void
-    right: () => void
-}
 
 export const useUIStore = create<HomeState>((set) => ({
     slidesLength: 0,

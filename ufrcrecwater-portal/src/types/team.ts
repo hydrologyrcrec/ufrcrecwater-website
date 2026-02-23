@@ -1,3 +1,5 @@
+import { PageKey } from "./state"
+
 export type MemName = {
     id: string 
     userName: string
@@ -14,11 +16,13 @@ export type MemPic = {
 export type MemTitle = {
     id: string
     position: string
+    status: string
 }
 
 export type MemDesc = {
     id: string
     description: string
+    status: string
 }
 
 export type MemStatus = {
@@ -29,7 +33,7 @@ export type MemStatus = {
 export type MemTenure = {
     id: string,
     tenureStart: Date,
-    tenureEnd: Date | "Present"
+    tenureEnd: Date | "current"
 }
 
 export type Member = {
@@ -37,7 +41,7 @@ export type Member = {
     user_name: string,
     position: string,
     tenure_start: Date,
-    tenure_end: Date | "Present",
+    tenure_end: Date | "current",
     status: string,
     description: string,
     s3_url: string
@@ -55,4 +59,10 @@ export type Icon = {
 export type Logos = {
     current: Icon,
     former: Icon
+}
+
+export type UserOnClick = {
+    page: PageKey,
+    cardId: string,
+    label: string
 }

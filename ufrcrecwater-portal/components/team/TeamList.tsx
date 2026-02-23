@@ -1,19 +1,12 @@
-import { Member, MembersList } from "@/types/team";
-import MemberCard from "./card";
-import Search from "../ui/search";
-import FilterSort from "../ui/publications/filter";
+import { MembersList } from "@/types/team";
+import MemberCard from "./Card1";
+import Search from "../ui/Search1";
+import FilterSort from "../ui/Filter1";
 import { FilterCheckboxOptions } from "@/data/team";
 
 export default function Team (props: MembersList){
-    const activeMembers: typeof props.members = [] 
-    const formerMembers: typeof props.members = []
-    props.members.forEach(member => {
-        if (member.status === "current") {
-            activeMembers.push(member)
-        } else {
-            formerMembers.push(member)
-        }
-    })
+    const activeMembers = props.members.filter(m => m.status === "current")
+    const formerMembers = props.members.filter(m => m.status === "former")
     return (
         <div className="p-5 flex justify-center flex-wrap gap-6 font-bold">
             <Search label="PublicationSearch" placeholder="Search by Member Name or Title"></Search>

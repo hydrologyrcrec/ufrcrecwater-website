@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PAGES } from "@/config/navigation";
-import Team from "../../../components/team/team-list";
+import Team from "../../../components/team/TeamList";
 import type { MembersList, Member } from "@/types/team";
 import { baseURL } from "@/data/constants";
 
@@ -20,9 +20,9 @@ export default async function TeamPage() {
     ...m,
     tenure_start: new Date(m.tenure_start),
     tenure_end:
-      m.tenure_end === "Present" || m.tenure_end === null
-        ? "Present"
-        : new Date(m.tenure_end as unknown as string),
+      m.tenure_end === "current" || m.tenure_end === null
+        ? "current"
+        : new Date(m.tenure_end),
   }));
 
   return <Team members={members}></Team>;

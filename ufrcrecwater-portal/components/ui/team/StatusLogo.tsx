@@ -5,7 +5,6 @@ import Image from "next/image";
 export default function MemberStatus(props: MemStatus){
     return (
         <Image
-        key={props.id + "_status"}
         src = {props.userStatus === "current" ? logosList.current.src : logosList.former.src}
         height={20}
         width={28}

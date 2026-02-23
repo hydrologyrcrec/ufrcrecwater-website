@@ -14,7 +14,7 @@ export async function GET() {
           user_name: member.user.user_name,
           position: member.position,
           tenure_start: member.tenure_start,
-          tenure_end: member.tenure_end ?? "Present",
+          tenure_end: member.tenure_end ?? "current",
           status: member.status,
           description: member.description ?? "",
           s3_url:

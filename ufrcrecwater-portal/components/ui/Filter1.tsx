@@ -1,8 +1,11 @@
 'use client'
 
 import { useState } from "react";
-import { Checkbox } from "../checkbox";
+import { Checkbox } from "./Checkbox1";
 import { Filter } from "@/types/general";
+import { logosList } from "@/data/general";
+import Action from "./DataOps1";
+import AdminOnly from "./AdminOnly1";
 
 export default function FilterSort(props: Filter) {
   const [options, setOptions] = useState(props.options);
@@ -25,10 +28,13 @@ export default function FilterSort(props: Filter) {
                 }}
                 />
             ))}
+            <button className="italic underline text-blue-500 cursor-pointer whitespace-nowrap text-lg pl-4" onClick={() => setOptions(props.options)}>Clear All</button>
         </div>
-        <div className="flex justify-end">
-            <button className="italic underline text-blue-500 cursor-pointer whitespace-nowrap" onClick={() => setOptions(props.options)}>Clear All</button>
-        </div>
+        <AdminOnly>
+            <div className="xl:flex xl:justify-end xl:gap-2 hidden">
+                <Action {...logosList.Add} cardId=""></Action>
+            </div>
+        </AdminOnly>
     </div>
   );
 }

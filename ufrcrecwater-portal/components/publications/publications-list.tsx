@@ -1,8 +1,8 @@
-import Search from "../ui/search";
+import Search from "../ui/Search1";
 import PublicationCard from "./card";
 import { PublicationList } from "@/types/publications";
 import { FilterCheckboxOptions } from "@/data/publications";
-import FilterSort from "../ui/publications/filter";
+import FilterSort from "../ui/Filter1";
 
 export default function Publications (props: PublicationList){
     return (
