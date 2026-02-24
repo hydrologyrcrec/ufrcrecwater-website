@@ -1,3 +1,5 @@
+"use client"
+
 import { Member } from "@/types/team";
 import MemberName from "./Name1";
 import MemberStatus from "./StatusLogo";
@@ -18,11 +20,11 @@ export default function MemberInfo(props: Member) {
                 <div className={`w-full flex justify-start items-start gap-2`}>
                     <MemberName id={props.user_id} userName={props.user_name.split(" ").slice(0, 2).join(" ")}></MemberName>
                     <MemberStatus id={props.user_id} status={props.tenure_end}></MemberStatus>
-                    <AdminOnly>
+                    {/* <AdminOnly>
                         <UpdateDeleteOps id={props.user_id}></UpdateDeleteOps>
-                    </AdminOnly>
+                    </AdminOnly> */}
                 </div>
-                <MemberTenure id={props.user_id} tenureStart={props.tenure_start} tenureEnd={props.tenure_end}></MemberTenure>
+                {/* <MemberTenure id={props.user_id} tenureStart={props.tenure_start} tenureEnd={props.tenure_end}></MemberTenure> */}
                 <MemberTitle id={props.user_id} position={props.position} status={props.tenure_end}></MemberTitle>
                 <MemberDescription id={props.user_id} description={props.description} status={props.tenure_end}></MemberDescription>
             </div>

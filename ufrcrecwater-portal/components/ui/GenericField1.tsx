@@ -1,3 +1,5 @@
+"use client"
+
 import { FieldLayout } from "./FieldLayout1"
 import { HTML_ELEMENT_FACTORY } from "./HtmlFactory1"
 import { GenericFieldProps } from "./HtmlFactory1"

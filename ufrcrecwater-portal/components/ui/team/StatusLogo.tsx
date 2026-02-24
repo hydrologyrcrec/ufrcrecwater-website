@@ -1,3 +1,5 @@
+'use client'
+
 import { MemStatus } from "@/types/team";
 import { logosList } from "@/data/team";
 import Image from "next/image";

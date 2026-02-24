@@ -8,8 +8,8 @@ import MemberInfo from "../ui/team/MemberInfo";
 export default function MemberCard(props: Member) {
     const {saveState, cardId} = useSelectionStore()
     return (
-        (saveState && cardId === props.user_id)?
-        <MemberForm {...props} />:
+        // (saveState && cardId === props.user_id)?
+        // <MemberForm {...props} /> :
         <MemberInfo {...props} />
     )
 }

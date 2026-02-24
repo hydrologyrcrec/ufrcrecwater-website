@@ -1,3 +1,5 @@
+'use client'
+
 import { MemDesc } from "@/types/team";
 
 export default function MemberDescription(props: MemDesc){

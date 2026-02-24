@@ -1,3 +1,5 @@
+"use client"
+
 import { MemPic } from "@/types/team";
 import Image from "next/image";
 

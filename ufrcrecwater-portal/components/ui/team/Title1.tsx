@@ -1,3 +1,5 @@
+'use client'
+
 import { MemTitle } from "@/types/team";
 
 export default function MemberTitle(props: MemTitle){

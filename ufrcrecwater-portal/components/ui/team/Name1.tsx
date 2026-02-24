@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { MemName } from "@/types/team";
 
