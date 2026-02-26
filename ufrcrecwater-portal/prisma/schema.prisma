@@ -97,6 +97,15 @@ model Research {
   updated_at      DateTime @default(now()) @updatedAt
 }
 
+model Instrument {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  instrument_title String  @default("Title")
+  instrument_desc String @default("Instrument")
+  date_installed  DateTime
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+}
+
 enum RoleType {
   admin
   team
