@@ -10,15 +10,15 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: PAGES.home.title,
-    template: `%s | ${PAGES.home.title}`,
-    // WHY: template enforces consistent branding across all pages
-  },
-  description: PAGES.home.description,
-    // WHY: concise, human-readable description for search previews
-};
+// export const metadata: Metadata = {
+//   title: {
+//     default: PAGES.home.title,
+//     template: `%s | ${PAGES.home.title}`,
+//     // WHY: template enforces consistent branding across all pages
+//   },
+//   description: PAGES.home.description,
+//     // WHY: concise, human-readable description for search previews
+// };
 
 export default function RootLayout({
   children,

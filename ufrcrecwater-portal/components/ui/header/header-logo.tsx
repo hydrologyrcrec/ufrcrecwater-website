@@ -11,7 +11,7 @@ import { logosList } from "@/data/publications";
 export function HeaderLogo() {
   return (
     <Link
-      href="/"
+      href="/publications"
       aria-label="Go to home"
       className="shrink-0 bg-white rounded-md"
     >

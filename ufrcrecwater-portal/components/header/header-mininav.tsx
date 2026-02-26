@@ -5,9 +5,6 @@ import { menuProps } from "./header";
 
 export function HeaderMiniNav(props: menuProps) {
   const navItems = Object.values(PAGES as Record<string, Page>)
-    .filter((page) => page.rank >= 1)
-    .sort((a, b) => a.rank - b.rank);
-
   return (
     <nav
       aria-label="Primary navigation"

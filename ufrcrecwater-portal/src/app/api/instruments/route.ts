@@ -1,13 +1,25 @@
 import { NextResponse } from "next/server"
 import { logger, serializeError } from "../../../../lib/logger";
 import { mockInstrumentList } from "@/data/instrument";
+import { getInstruments } from "../../../../lib/db/instrument";
+import { generateDownloadUrl } from "../../../../lib/aws/s3";
 
 export async function GET() {
   try {
     logger.info({request: "GET /api/instruments", message: "Fetching instruments data..."});
+    const instruments = await getInstruments();
+    type InstrumentWithRelations = (typeof instruments)[number];
     const payload = {
-      instruments: mockInstrumentList.instruments,
-      success: true,
+      instruments: await Promise.all(
+        instruments.map(async (ins: InstrumentWithRelations) => ({
+          id: ins.id,
+          instrument_title: ins.instrument_title,
+          instrument_desc: ins.instrument_desc,
+          date_installed: ins.date_installed,
+          s3_url: await generateDownloadUrl(`Instruments/${ins.id}.jpg`)
+          })),        
+        )
+    , success: true,
     };
     logger.info({request: "GET /api/instruments", message: "Successfully fetched instruments data", success: true});
 

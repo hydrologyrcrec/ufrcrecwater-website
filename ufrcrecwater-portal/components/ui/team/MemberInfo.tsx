@@ -24,7 +24,7 @@ export default function MemberInfo(props: Member) {
                         <UpdateDeleteOps id={props.user_id}></UpdateDeleteOps>
                     </AdminOnly> */}
                 </div>
-                {/* <MemberTenure id={props.user_id} tenureStart={props.tenure_start} tenureEnd={props.tenure_end}></MemberTenure> */}
+                <MemberTenure id={props.user_id} tenureStart={props.tenure_start} tenureEnd={props.tenure_end}></MemberTenure>
                 <MemberTitle id={props.user_id} position={props.position} status={props.tenure_end}></MemberTitle>
                 <MemberDescription id={props.user_id} description={props.description} status={props.tenure_end}></MemberDescription>
             </div>
