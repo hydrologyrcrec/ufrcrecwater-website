@@ -104,6 +104,17 @@ model Instrument {
   date_installed  DateTime
   created_at      DateTime @default(now())
   updated_at      DateTime @default(now()) @updatedAt
+  tools           Tool[]
+}
+
+model Tool {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  instrument_id   String   @db.Uuid
+  tool_title      String   @default("Title")
+  tool_desc       String   @default("Tool")
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+  instrument    Instrument @relation(fields: [instrument_id], references: [id], onDelete: Cascade)
 }
 
 enum RoleType {
