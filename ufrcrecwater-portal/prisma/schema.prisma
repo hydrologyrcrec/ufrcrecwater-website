@@ -102,6 +102,7 @@ model Instrument {
   instrument_title String  @default("Title")
   instrument_desc String @default("Instrument")
   date_installed  DateTime
+  date_uninstalled DateTime?
   created_at      DateTime @default(now())
   updated_at      DateTime @default(now()) @updatedAt
   tools           Tool[]
