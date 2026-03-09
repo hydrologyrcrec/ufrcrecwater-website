@@ -16,13 +16,14 @@ export async function GET() {
           instrument_title: ins.instrument_title,
           instrument_desc: ins.instrument_desc,
           date_installed: ins.date_installed,
+          date_uninstalled: ins.date_uninstalled ?? "current",
+          hasTools: ins._count.tools > 0,
           s3_url: await generateDownloadUrl(`Instruments/${ins.id}.jpg`)
           })),        
         )
     , success: true,
     };
     logger.info({request: "GET /api/instruments", message: "Successfully fetched instruments data", success: true});
-
     return NextResponse.json(payload);
   } catch (error) {
     logger.error({request: "GET /api/instruments", message: "Unable to fetch instruments data because of an error", success: false}, { error: serializeError(error) });

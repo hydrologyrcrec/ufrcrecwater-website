@@ -2,11 +2,15 @@
 
 import { InsPic } from "@/types/instrument";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function InstrumentPicture(props: InsPic){
     const fallbackImage = "/default.jpg"
     const [src, setSrc] = useState(props.imageUrl);
+
+    useEffect(() => {
+        setSrc(props.imageUrl);
+      }, [props.imageUrl]);
     return (
         <Image
         key={props.id + "_image"}

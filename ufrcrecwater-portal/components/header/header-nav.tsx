@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { PAGES } from "@/config/navigation";
 import { Page } from "@/config/navigation"; 
@@ -34,11 +36,7 @@ export function HeaderNav() {
               href={page.href}
               className={[
                 "text-lg font-semibold",
-                // "transition-opacity hover:opacity-90",
-                "focus:shadow-xl focus:shadow-gray-400",
-                "bg-transparent focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:underline"
-                // "shadow-xl shadow-gray-400",
-                // pathname === page.href && "after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-white/60 after:shadow-[0_2px_8px_rgba(255,255,255,0.5)]"
+                pathname === page.href && "text-shadow-lg text-shadow-black",
               ].join(" ")}
             >
               {page.heading}

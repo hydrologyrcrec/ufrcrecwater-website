@@ -1,5 +1,6 @@
 import { RoleType } from "@prisma/client"
 import { Slides } from "./home"
+import { InstrumentTools, Tool} from "./instrument"
 
 export type HomeState = {
     slidesLength: number
@@ -49,4 +50,14 @@ export type AuthState = {
     setUserName: (user_name: string | null) => void
     setRole: (role: RoleType | null) => void
     setEmail: (email: string | null) => void
+}
+
+export type Action = "left" | "right"
+
+export type InstrumentState = {
+    data: InstrumentTools | null
+    setInitialData: (data: { instrument_id: string, hasTools: boolean}[]) => void
+    setData: (instrument_id: string, data: Tool []) => void
+    setDataFetchStatus: (instrument_id: string, isDataFetched: boolean) => void
+    setCurrentInstrumentToolIndex: (instrument_id: string, action: Action) => void
 }
