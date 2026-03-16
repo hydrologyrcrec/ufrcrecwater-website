@@ -5,7 +5,7 @@ export default function PageLink(props: Page){
     return (
         <Link
         href={props.href}
-        className="text-lg font-normal"
+        className="text-lg font-medium"
       >
         {props.heading}
       </Link>

@@ -57,7 +57,8 @@ export type Icon = {
 
 export type Logos = {
     current: Icon,
-    former: Icon
+    former: Icon,
+    calendar: Icon
 }
 
 export type UserOnClick = {

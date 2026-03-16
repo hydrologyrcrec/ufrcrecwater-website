@@ -58,7 +58,7 @@ export type InstrumentList = {
     instruments: Instrument []
 }
 
-export type LogoKey = 'left-arrow' | 'right-arrow' | 'left-blocked-arrow' | 'right-blocked-arrow'
+export type LogoKey = 'left-arrow' | 'right-arrow' | 'left-blocked-arrow' | 'right-blocked-arrow' | 'location' | 'calendar'
 
 export type Icon = {
   src: string;

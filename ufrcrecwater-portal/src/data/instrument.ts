@@ -9,7 +9,9 @@ export const LogosList: Logos = {
     "left-arrow": { src: '/instrumentation/left-arrow.png', alt: 'large-left-slider' },
     "right-arrow": { src: '/instrumentation/right-arrow.png', alt: 'large-right-slider' },
     "left-blocked-arrow": { src: '/instrumentation/left-blocked-arrow.png', alt: 'large-left-slider-blocked' },
-    "right-blocked-arrow": { src: '/instrumentation/right-blocked-arrow.png', alt: 'large-right-slider-blocked' }
+    "right-blocked-arrow": { src: '/instrumentation/right-blocked-arrow.png', alt: 'large-right-slider-blocked' },
+    "location": { src: '/instrumentation/location.png', alt: 'location' },
+    "calendar": { src: '/calendar.png', alt: 'Calendar Icon' },
 }
 
 export const mockInstrumentList: InstrumentList = {

@@ -57,7 +57,7 @@ export const publicationsMockData: PublicationList = {
   ]};
 
 export const logosList: Logos = {
-    calendar: { src: '/publications/calendar.png', alt: 'Calendar Icon' },
+    calendar: { src: '/calendar.png', alt: 'Calendar Icon' },
     link: { src: '/publications/link.png', alt: 'Link Icon' },
     view: { src: '/publications/view.png', alt: 'View Icon' },
     download: { src: '/publications/download.png', alt: 'Download Icon' },
@@ -65,7 +65,6 @@ export const logosList: Logos = {
     writing: { src: '/publications/writing.png', alt: 'Writing Icon' },
     menu: { src: '/publications/menu.png', alt: 'Menu Icon' },
     gradientmenu: { src: '/publications/gradient-menu.png', alt: 'Gradient Menu Icon' },
-    purplemenu: { src: '/publications/purple-menu.png', alt: 'Purple Menu Icon' },
     ufifas: { src: '/uf-ifas-logo.jpg', alt: 'UF IFAS Logo' },
     close: { src: '/publications/close.png', alt: 'Close Icon' }
 }

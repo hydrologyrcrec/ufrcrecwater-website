@@ -8,9 +8,9 @@ export default function Address(){
             <FooterHeading title="Address"></FooterHeading>
             <div className="px-2 pt-2">
                 <Link href={footerInfo.address.link}>
-                    <p className="text-lg font-normal">{footerInfo.address.line1}</p>
-                    <p className="text-lg font-normal">{footerInfo.address.line2}</p>
-                    <p className="text-lg font-normal">{footerInfo.address.line3}</p>
+                    <p className="text-lg font-medium">{footerInfo.address.line1}</p>
+                    <p className="text-lg font-medium">{footerInfo.address.line2}</p>
+                    <p className="text-lg font-medium">{footerInfo.address.line3}</p>
                 </Link>
             </div>
         </div>

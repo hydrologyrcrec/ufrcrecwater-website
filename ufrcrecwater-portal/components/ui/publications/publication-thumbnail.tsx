@@ -4,7 +4,7 @@ import { PubTnail } from "@/types/publications";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Thumbnail(props: PubTnail){
+export default function PubThumbnail(props: PubTnail){
     const fallbackImage = "/default.jpg"
     const [src, setSrc] = useState(props.imageUrl);
     return (

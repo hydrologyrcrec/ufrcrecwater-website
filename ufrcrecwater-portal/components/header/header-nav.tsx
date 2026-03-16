@@ -24,7 +24,7 @@ export function HeaderNav() {
         // WHY: Gradient background exactly as requested
         "xl:flex hidden h-16 flex-1 rounded-md", 
         "text-[#DB7E31]",
-        "bg-[#302370]",
+        "bg-gray-600",
         // WHY: On small screens, allow horizontal scroll rather than wrapping into ugly rows
         "whitespace-nowrap",
       ].join(" ")}
@@ -35,8 +35,8 @@ export function HeaderNav() {
             <Link
               href={page.href}
               className={[
-                "text-lg font-semibold",
-                pathname === page.href && "text-shadow-lg text-shadow-black",
+                "text-xl font-semibold",
+                pathname === page.href && "text-shadow-md text-shadow-black",
               ].join(" ")}
             >
               {page.heading}

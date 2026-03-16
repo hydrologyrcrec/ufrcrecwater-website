@@ -28,7 +28,7 @@ export default function MemberForm(props: Member) {
         setCancelState(false);
     }
     return (
-        <form key={props.user_id + "_card"} className="relative h-max w-4/5 gap-4 flex items-start justify-start bg-[#302370] rounded-2xl shadow-gray-600 shadow-xl" onSubmit={(e) => handleSubmit(e, props.user_id)}>
+        <form key={props.user_id + "_card"} className="relative h-max w-4/5 gap-4 flex items-start justify-start bg-gray-600 rounded-2xl shadow-gray-600 shadow-xl" onSubmit={(e) => handleSubmit(e, props.user_id)}>
             <div className="h-full flex justify-start items-start">
                 <MemberPicture id={props.s3_url} imageUrl={props.s3_url} height={350} width={350} alt={props.user_name + "_picture"}></MemberPicture>
             </div>

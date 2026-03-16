@@ -1,18 +1,18 @@
 "use client"
 
 import { Member } from "@/types/team";
-import MemberName from "./Name1";
-import MemberStatus from "./StatusLogo";
-import MemberTitle from "./Title1";
-import MemberDescription from "./Description1";
-import MemberPicture from "./DisplayPicture";
-import MemberTenure from "./Tenure";
-import UpdateDeleteOps from "./UpdateDeleteOps";
-import AdminOnly from "../AdminOnly1";
+import MemberName from "../ui/team/Name1";
+import MemberStatus from "../ui/team/StatusLogo";
+import MemberTitle from "../ui/team/Title1";
+import MemberDescription from "../ui/team/Description1";
+import MemberPicture from "../ui/team/DisplayPicture";
+import MemberTenure from "../ui/team/Tenure";
+import UpdateDeleteOps from "../ui/team/UpdateDeleteOps";
+import AdminOnly from "../ui/AdminOnly1";
 
 export default function MemberInfo(props: Member) {
     return (
-        <div key={props.user_id + "_card"} className="relative h-max w-4/5 gap-4 flex items-start justify-start bg-[#302370] rounded-2xl shadow-gray-600 shadow-xl">
+        <div key={props.user_id + "_card"} className="relative h-max w-3/5 gap-4 flex items-start justify-start bg-gray-600 rounded-2xl shadow-gray-600 shadow-xl">
             <div className="h-full flex justify-start items-start">
                 <MemberPicture id={props.s3_url} imageUrl={props.s3_url} height={350} width={350} alt={props.user_name + "_picture"}></MemberPicture>
             </div>

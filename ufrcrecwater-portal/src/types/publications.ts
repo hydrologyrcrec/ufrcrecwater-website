@@ -81,7 +81,6 @@ export type Logos = {
     writing: Icon,
     menu: Icon,
     gradientmenu: Icon,
-    purplemenu: Icon,
     ufifas: Icon,
     close: Icon
 }

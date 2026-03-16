@@ -12,7 +12,8 @@ export const membersMockData: MembersList = {
 
 export const logosList: Logos = {
     current: { src: '/team/current.png', alt: 'current Icon' },
-    former: { src: '/team/former.png', alt: 'Former Icon' }
+    former: { src: '/team/former.png', alt: 'Former Icon' },
+    calendar: { src: '/calendar.png', alt: 'Calendar Icon' },
 }
 
 export const FilterCheckboxOptions : Filter = {

@@ -1,8 +1,8 @@
 import { Journal } from "@/types/publications";
 import Link from "next/link";
 
-export default function JournalName(props: Journal) {
+export default function PubJournalName(props: Journal) {
     return (
-        <Link key={props.journal_name} href={props.journal_url} className="text-sm text-white">{props.journal_name}</Link>
+        <Link key={props.journal_name} href={props.journal_url} className="text-sm text-[#DB7E31]">{props.journal_name}</Link>
     );
 }
