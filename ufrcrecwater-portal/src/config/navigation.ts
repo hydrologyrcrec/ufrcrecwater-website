@@ -76,7 +76,7 @@ export const PAGES : Pages = {
     instrumentation: {
         heading: "Instrumentation",
         title: "Instrumentation",
-        description: "Scientific instruments, sensors, and tools used in research under Dr. Golmar Golmohammadi.",
+        description: "Instrumentation Monitoring Network by Watershed Hydrology Lab.",
         rank: 6,
         href: "/instrumentation",
     },

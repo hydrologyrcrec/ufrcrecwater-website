@@ -5,10 +5,9 @@ import InstrumentPicture from "../ui/instrumentation/instrumentation-picture";
 import InstrumentDescription from "../ui/instrumentation/description";
 import InstrumentTitle from "../ui/instrumentation/title";
 import Timeline from "../ui/instrumentation/date";
-import Navigator from "./navigator";
-import { LogosList } from "@/data/instrument";
 import { useInstrumentStore } from "@/store/instrumentationStore";
 import ToolTitle from "../ui/instrumentation/tool-title";
+import InstrumentLocation from "../ui/instrumentation/location";
 
 export default function InstrumentCard(props: Instrument) {
     const { data } = useInstrumentStore();
@@ -26,15 +25,18 @@ export default function InstrumentCard(props: Instrument) {
     }
     
     return (
-        <div key={props.id + "_card"} className="h-fit w-3/5 flex items-start justify-start gap-4 bg-gray-600 rounded-2xl shadow-gray-600 shadow-xl">
-            <div className="h-full flex justify-start items-start">
+        <div key={props.id + "_card"} className="h-fit w-3/5 flex items-stretch justify-start gap-4 bg-gray-600 rounded-2xl shadow-gray-600 shadow-xl">
+            <div className="flex justify-start items-start shrink-0">
                 <InstrumentPicture id={cardDisplayPic} imageUrl={cardDisplayPic} height={350} width={350} alt={props.id + "_picture"}></InstrumentPicture>
             </div>
-            <div className="h-full w-2/3 m-2 overflow-hidden">
+            <div className="h-full w-2/3 m-2 flex overflow-scroll self-stretch">
                 <div className="relative h-full w-full flex flex-col px-2 justify-start items-start text-sm rounded-2xl">
-                    <Navigator id={props.id} hasTools={props.hasTools} {...LogosList}></Navigator>
+                    {/* <Navigator id={props.id} hasTools={props.hasTools} {...LogosList}></Navigator> */}
                     <InstrumentTitle id={cardId} instrument_title={props.instrument_title}></InstrumentTitle>
-                    <Timeline date_installed={props.date_installed} date_uninstalled={props.date_uninstalled}></Timeline>
+                    <div className="flex px-2 py-1 justify-start gap-2 overflow-scroll 2xl:gap-6 2xl:flex-row flex-col">
+                        <Timeline date_installed={props.date_installed} date_uninstalled={props.date_uninstalled}></Timeline>
+                        <InstrumentLocation instrument_location={props.instrument_location}></InstrumentLocation>
+                    </div>
                     {toolTitle && <ToolTitle tool_title={toolTitle}></ToolTitle>}
                     {cardDescription!=="Tool" && <InstrumentDescription id={cardId} instrument_desc={cardDescription}></InstrumentDescription>}
                 </div>

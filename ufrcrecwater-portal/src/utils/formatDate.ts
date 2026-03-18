@@ -4,6 +4,12 @@ export function getMonthandYear(date: Date) {
     return `${month.slice(0, 3)} ${year}`;
 }
 
+export function getYear(date: Date) {
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+    return `${year}`;
+}
+
 export function toInputDate(date: Date) {
     return new Date(
     date.getTime() - date.getTimezoneOffset() * 60000

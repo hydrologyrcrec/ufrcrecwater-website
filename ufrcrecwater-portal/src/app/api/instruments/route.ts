@@ -17,6 +17,7 @@ export async function GET() {
           instrument_desc: ins.instrument_desc,
           date_installed: ins.date_installed,
           date_uninstalled: ins.date_uninstalled ?? "current",
+          instrument_location: ins.instrument_location,
           hasTools: ins._count.tools > 0,
           s3_url: await generateDownloadUrl(`Instruments/${ins.id}.jpg`)
           })),        

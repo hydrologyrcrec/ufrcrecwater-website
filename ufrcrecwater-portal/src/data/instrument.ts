@@ -25,6 +25,7 @@ export const mockInstrumentList: InstrumentList = {
           "https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/ufrcrecwater-assets/Instruments/temp.jpg",
         date_installed: new Date("2022-03-15"),
         date_uninstalled: "current",
+        instrument_location: "Ona",
         hasTools: true
       },
       {
@@ -36,6 +37,7 @@ export const mockInstrumentList: InstrumentList = {
           "https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/ufrcrecwater-assets/Instruments/temp1.jpg",
         date_installed: new Date("2021-08-02"),
         date_uninstalled: "current",
+        instrument_location: "Ona",
         hasTools: true
       },
       {
@@ -47,6 +49,7 @@ export const mockInstrumentList: InstrumentList = {
           "https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/ufrcrecwater-assets/Instruments/temp2.jpg",
         date_installed: new Date("2020-11-10"),
         date_uninstalled: "current",
+        instrument_location: "Ona",
         hasTools: true
       },
       {
@@ -58,6 +61,7 @@ export const mockInstrumentList: InstrumentList = {
           "https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/ufrcrecwater-assets/Instruments/temp3.jpg",
         date_installed: new Date("2023-01-27"),
         date_uninstalled: "current",
+        instrument_location: "Ona",
         hasTools: false
       },
       {
@@ -69,6 +73,7 @@ export const mockInstrumentList: InstrumentList = {
           "https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/ufrcrecwater-assets/Instruments/temp4.jpg",
         date_installed: new Date("2022-09-05"),
         date_uninstalled: "current",
+        instrument_location: "Ona",
         hasTools: false
       },
     ],

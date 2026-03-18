@@ -50,6 +50,7 @@ export type Instrument = {
     instrument_desc: string
     date_installed: Date
     date_uninstalled: Date | "current"
+    instrument_location: string
     hasTools: boolean
     s3_url: string
 }

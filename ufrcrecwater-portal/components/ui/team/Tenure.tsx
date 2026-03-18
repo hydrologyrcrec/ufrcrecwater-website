@@ -2,7 +2,7 @@
 
 import { MemTenure } from "@/types/team";
 import { getMonthandYear } from "@/utils/formatDate";
-import DateLogo from "../Icon1";
+import DateLogo from "../DateIcon";
 
 export default function MemberTenure(props: MemTenure) {
     return (

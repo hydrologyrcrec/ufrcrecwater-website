@@ -7,7 +7,7 @@ export async function getInstruments() {
               select: { tools: true }
             }
           },
-        orderBy: { date_installed: "desc" },
+        orderBy: { created_at: "asc" },
     });
   }
 
