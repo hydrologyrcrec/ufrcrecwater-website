@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useInstrumentStore } from "@/store/instrumentationStore";
 import InstrumentCard from "./card";
 import { Instrument, InstrumentList } from "@/types/instrument";
-import InstrumentPageSubject from "../ui/instrumentation/PageSubject";
+import InstrumentOverview from "../ui/instrumentation/Instrumentation-Overview";
 
 export default function InstrumentHistory(props: InstrumentList) {
   const { setInitialData } = useInstrumentStore();
@@ -19,7 +19,7 @@ export default function InstrumentHistory(props: InstrumentList) {
 
   return (
     <div className="p-5 flex flex-col w-full justify-center gap-6 font-bold">
-       {/* <InstrumentPageSubject></InstrumentPageSubject> */}
+       <InstrumentOverview></InstrumentOverview>
       <div className="flex flex-col gap-6 items-center justify-center">
         {props.instruments.map((instrument: Instrument) => (
           <InstrumentCard key={instrument.id + "_card"} {...instrument} />
