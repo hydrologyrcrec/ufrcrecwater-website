@@ -103,6 +103,7 @@ model Instrument {
   instrument_desc String @default("Instrument")
   date_installed  DateTime
   date_uninstalled DateTime?
+  instrument_location String @default("Ona")
   created_at      DateTime @default(now())
   updated_at      DateTime @default(now()) @updatedAt
   tools           Tool[]
