@@ -15,7 +15,7 @@ export default function MemberPicture(props: MemPic){
         width={props.width}
         alt = {props.alt}
         onError={() => setSrc(fallbackImage)}
-        className="rounded-l-2xl object-cover h-full w-full"
+        className="object-cover h-full w-full"
         ></Image>
     )
 }

@@ -25,11 +25,11 @@ export default function InstrumentCard(props: Instrument) {
     }
     
     return (
-        <div key={props.id + "_card"} className="relative h-160 w-90 md:w-100 flex flex-col justify-center items-center gap-4 shadow-xl shadow-gray-600 rounded-2xl">
+        <div key={props.id + "_card"} className="relative h-160 w-full max-w-100 flex flex-col justify-center items-center gap-4 shadow-xl shadow-gray-600 rounded-2xl">
             <div className="absolute h-full z-[-1] top-0 inset-0">
             <InstrumentPicture id={cardDisplayPic} imageUrl={cardDisplayPic} height={350} width={350} alt={props.id + "_picture"}></InstrumentPicture>
             </div>
-            <div className="absolute h-4/10 z-1 bottom-0 inset-x-0 bg-linear-300 from-[#334142]/80 via-[#727f85]/80 to-[#334142]/80 flex flex-col rounded-b-2xl">
+            <div className="absolute h-4/10 z-1 bottom-0 inset-x-0 bg-[#afafaf] flex flex-col rounded-b-2xl">
             
                 <div className="p-4 flex flex-col justify-center items-start h-full backdrop-blur-3xl rounded-b-2xl">
                     {/* <Navigator id={props.id} hasTools={props.hasTools} {...LogosList}></Navigator> */}

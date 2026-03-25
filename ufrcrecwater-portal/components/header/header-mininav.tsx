@@ -11,7 +11,7 @@ export function HeaderMiniNav(props: menuProps) {
       className={[
         "xl:hidden fixed z-8 flex items-start", 
         "text-black",
-        "bg-linear-300 from-[#334142]/80 via-[#727f85]/80 to-[#334142]/80",
+        "bg-[#afafaf]",
         "whitespace-nowrap",
         props.menuStatusProp && "w-screen h-screen"
       ].join(" ")}

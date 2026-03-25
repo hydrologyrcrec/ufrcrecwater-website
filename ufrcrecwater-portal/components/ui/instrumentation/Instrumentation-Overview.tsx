@@ -18,14 +18,14 @@ export default function InstrumentOverview(){
         <>
         <div className="w-full flex justify-center items-center px-6 pt-6">
             <div className="w-19/20 flex flex-col justify-center items-center gap-6">
-                <div className="inline-block">
+                <div className="inline-block w-full">
 
                     {/* Title (defines width) */}
                     <div>
                         <h1 className="text-black text-4xl">
                             {PAGES.instrumentation.description}
                         </h1>
-                        <hr className="mt-2 mb-6 border-gray-400" />
+                        <hr className="mt-2 mb-6 border-[#afafaf]" />
                     </div>
 
                     {/* Description forced to same width */}
@@ -37,7 +37,7 @@ export default function InstrumentOverview(){
                         </div>
                     </div>
 
-                    <div className="relative flex flex-col gap-2 pb-6">
+                    {/* <div className="relative flex flex-col gap-2 pb-6">
 
                         <div className="flex">
                             <Image
@@ -73,10 +73,10 @@ export default function InstrumentOverview(){
                                 ></Image>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 <div>
                     <h2 className="text-black text-4xl">Instruments</h2>
-                    <hr className="mt-2 mb-6 border-gray-400" />
+                    <hr className="mt-2 mb-6 border-[#afafaf]" />
                 </div>
 
                 </div>

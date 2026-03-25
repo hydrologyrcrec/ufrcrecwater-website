@@ -11,7 +11,7 @@ export default function Team (props: MembersList){
         <div className="p-5 grid grid-cols-1 gap-6 font-bold justify-center">
             {/* <Search label="PublicationSearch" placeholder="Search by Member Name or Title"></Search> */}
             {/* <FilterSort {...FilterCheckboxOptions}></FilterSort> */}
-            <div className="grid grid-cols-[repeat(auto-fit,800px)] gap-8 justify-center">
+            <div className="flex flex-col items-center justify-center gap-8">
                 {activeMembers.map((member)=> 
                 <MemberCard key={member.user_id + "_card"} {...member} />
                 )}

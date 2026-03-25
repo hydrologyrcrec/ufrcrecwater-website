@@ -10,7 +10,7 @@ export default function Publications (props: PublicationList){
             {/* <Search label="PublicationSearch" placeholder="Search by Research Name, Author, Journal, or Date of Publication, etc" />
             <FilterSort {...FilterCheckboxOptions} /> */}
             {/* <div className="pb-10 w-full flex flex-wrap gap-8 items-center justify-center overflow-auto"> */}
-            <div className="pb-10 w-full grid grid-cols-[repeat(auto-fit,1000px)] gap-8 justify-center overflow-auto">
+            <div className="pb-10 w-full flex flex-col items-center justify-center gap-8 overflow-auto">
                 {props.publications.map((publication) => (
                     <PublicationCard key={publication.id} {...publication} />
                 ))}

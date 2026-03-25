@@ -90,4 +90,5 @@ export type Element = {
     id: string,
     img: Icon,
     component: React.ReactElement
+    css?: string
 }

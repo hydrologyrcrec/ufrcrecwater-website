@@ -24,7 +24,7 @@ export function HeaderNav() {
         // WHY: Gradient background exactly as requested
         "xl:flex hidden h-16 flex-1 rounded-md", 
         "text-black my-2",
-        "bg-linear-300 from-[#334142]/80 via-[#727f85]/80 to-[#334142]/80",
+        "bg-[#afafaf]",
         // WHY: On small screens, allow horizontal scroll rather than wrapping into ugly rows
         "whitespace-nowrap",
       ].join(" ")}

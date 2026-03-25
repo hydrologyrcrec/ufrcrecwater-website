@@ -19,8 +19,10 @@ export default function InstrumentHistory(props: InstrumentList) {
 
   return (
     <div className="p-5 flex flex-col w-full justify-center gap-6 font-bold">
-       {/* <InstrumentOverview></InstrumentOverview> */}
-      <div className="grid grid-cols-[repeat(auto-fit,400px)] gap-8 justify-center">
+       <InstrumentOverview></InstrumentOverview>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,400px))]
+                sm:grid-cols-[minmax(300px,400px)_minmax(300px,400px)]
+                xl:grid-cols-[minmax(300px,400px)_minmax(300px,400px)_minmax(300px,400px)_minmax(300px,400px)] gap-8 justify-center">
         {props.instruments.map((instrument: Instrument) => (
           <InstrumentCard key={instrument.id + "_card"} {...instrument} />
         ))}

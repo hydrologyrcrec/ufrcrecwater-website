@@ -12,11 +12,11 @@ import AdminOnly from "../ui/AdminOnly1";
 
 export default function MemberInfo(props: Member) {
     return (
-        <div key={props.user_id + "_card"} className="relative h-80 w-200 flex items-stretch justify-start bg-linear-300 from-[#334142]/90 via-[#727f85]/90 to-[#334142]/90 shadow-gray-600 rounded-2xl shadow-xl">
-            <div className="w-80 h-80 flex justify-start items-start shrink-0">
+        <div key={props.user_id + "_card"} className="relative h-150 w-84 md:h-80 md:w-180 lg:w-200 flex flex-col md:flex-row md:items-stretch md:justify-start items-stretch justify-start bg-[#afafaf] shadow-gray-600 rounded-2xl shadow-xl">
+            <div className="md:w-80 md:h-80 w-full md:rounded-l-2xl md:rounded-t-none rounded-t-2xl flex justify-start items-start shrink-0 overflow-clip">
                 <MemberPicture id={props.s3_url} imageUrl={props.s3_url} height={350} width={350} alt={props.user_name + "_picture"}></MemberPicture>
             </div>
-            <div className={`h-full w-2/3 flex overflow-scroll self-stretch`}>
+            <div className={`h-full md:w-2/3 flex overflow-scroll self-stretch`}>
                 <div className="p-4 flex flex-1 flex-col justify-start items-start self-stretch rounded-2xl">
                     <div className={`w-full flex justify-start items-start gap-2`}>
                         <MemberName id={props.user_id} userName={props.user_name.split(" ").slice(0, 2).join(" ")}></MemberName>
