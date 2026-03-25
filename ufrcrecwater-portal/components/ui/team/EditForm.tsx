@@ -51,7 +51,7 @@ export default function MemberForm(props: Member) {
                             }
                             />}
                     </div>
-                    <label className="flex items-center gap-2 text-white text-sm px-2 pb-3">
+                    <label className="flex items-center gap-2 text-black text-sm px-2 pb-3">
                         <input
                         type="checkbox"
                         checked={current}

@@ -34,6 +34,7 @@ export type PubTnail = {
     alt: string
     height: number
     width: number
+    publication_url: string
 }
 
 export type Author = {

@@ -3,9 +3,9 @@ import FooterHeading from "./footer-heading";
 
 export default function Hours(){
     return (
-        <div className="px-4">
+        <div>
             <FooterHeading title="Working Hours"></FooterHeading>
-            <div className="px-2 pt-2">
+            <div className="pt-2">
                 <p className="text-lg font-medium">{footerInfo.openhours.days}</p>
                 <p className="text-lg font-medium">{footerInfo.openhours.timings}</p>
             </div>

@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Address(){
     return (
-        <div className="px-4">
+        <div>
             <FooterHeading title="Address"></FooterHeading>
-            <div className="px-2 pt-2">
+            <div className="pt-2">
                 <Link href={footerInfo.address.link}>
                     <p className="text-lg font-medium">{footerInfo.address.line1}</p>
                     <p className="text-lg font-medium">{footerInfo.address.line2}</p>

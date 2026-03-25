@@ -3,7 +3,7 @@ import SocMed from "../ui/footer/icon";
 
 export default function SocialAccounts(props: Logos){
     return (
-        <div className="w-max px-2 flex flex-col justify-start gap-8">
+        <div className="w-max flex flex-col justify-start gap-4">
             {Object.keys(props).map((key) => (
             <SocMed key={key} {...props[key as keyof Logos]} />
             ))}

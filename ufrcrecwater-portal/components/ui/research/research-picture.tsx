@@ -15,7 +15,7 @@ export default function ResearchPicture(props: ResPic){
         width={props.width}
         alt = {props.alt}
         onError={() => setSrc(fallbackImage)}
-        className="rounded-l-2xl object-cover"
+        className="md:rounded-l-2xl h-full w-full object-cover"
         ></Image>
     )
 }

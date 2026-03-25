@@ -21,7 +21,7 @@ export function GenericField({
         name,
         ...elementProps,
         className:
-        `w-full bg-transparent outline-none text-sm whitespace-pre-wrap break-words text-white ${elementProps?.className}`,
+        `w-full bg-transparent outline-none text-sm whitespace-pre-wrap break-words text-black ${elementProps?.className}`,
         children
       })}
     </FieldLayout>

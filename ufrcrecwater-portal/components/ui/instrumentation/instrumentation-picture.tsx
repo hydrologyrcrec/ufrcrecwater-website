@@ -19,7 +19,7 @@ export default function InstrumentPicture(props: InsPic){
         width={props.width}
         alt = {props.alt}
         onError={() => setSrc(fallbackImage)}
-        className="rounded-l-2xl object-cover h-full"
+        className="object-cover w-full h-full rounded-2xl"
         ></Image>
     )
 }

@@ -9,14 +9,14 @@ export function HeaderMiniNav(props: menuProps) {
     <nav
       aria-label="Primary navigation"
       className={[
-        "xl:hidden fixed z-8 py-20 flex items-start", 
-        "text-white",
-        "bg-gray-600",
+        "xl:hidden fixed z-8 flex items-start", 
+        "text-black",
+        "bg-linear-300 from-[#334142]/80 via-[#727f85]/80 to-[#334142]/80",
         "whitespace-nowrap",
         props.menuStatusProp && "w-screen h-screen"
       ].join(" ")}
     >
-      {props.menuStatusProp && <ul className="w-full px-7.5 py-1 flex flex-col justify-center items-center gap-2">
+      {props.menuStatusProp && <ul className="w-full h-full px-7.5 py-20 flex flex-col justify-start items-center gap-2 backdrop-blur-3xl">
         {navItems.map((page) => (
           <li key={page.href} className="shrink-0">
             <Link

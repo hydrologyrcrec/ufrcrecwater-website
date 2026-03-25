@@ -25,20 +25,20 @@ export default function InstrumentCard(props: Instrument) {
     }
     
     return (
-        <div key={props.id + "_card"} className="h-fit w-3/5 flex items-stretch justify-start gap-4 bg-gray-600 rounded-2xl shadow-gray-600 shadow-xl">
-            <div className="flex justify-start items-start shrink-0">
-                <InstrumentPicture id={cardDisplayPic} imageUrl={cardDisplayPic} height={350} width={350} alt={props.id + "_picture"}></InstrumentPicture>
+        <div key={props.id + "_card"} className="relative h-160 w-90 md:w-100 flex flex-col justify-center items-center gap-4 shadow-xl shadow-gray-600 rounded-2xl">
+            <div className="absolute h-full z-[-1] top-0 inset-0">
+            <InstrumentPicture id={cardDisplayPic} imageUrl={cardDisplayPic} height={350} width={350} alt={props.id + "_picture"}></InstrumentPicture>
             </div>
-            <div className="h-full w-2/3 m-2 flex overflow-scroll self-stretch">
-                <div className="relative h-full w-full flex flex-col px-2 justify-start items-start text-sm rounded-2xl">
+            <div className="absolute h-4/10 z-1 bottom-0 inset-x-0 bg-linear-300 from-[#334142]/80 via-[#727f85]/80 to-[#334142]/80 flex flex-col rounded-b-2xl">
+            
+                <div className="p-4 flex flex-col justify-center items-start h-full backdrop-blur-3xl rounded-b-2xl">
                     {/* <Navigator id={props.id} hasTools={props.hasTools} {...LogosList}></Navigator> */}
                     <InstrumentTitle id={cardId} instrument_title={props.instrument_title}></InstrumentTitle>
-                    <div className="flex px-2 py-1 justify-start gap-2 overflow-scroll 2xl:gap-6 2xl:flex-row flex-col">
+                    <div className="flex px-2 py-1 justify-start gap-2 flex-col">
                         <Timeline date_installed={props.date_installed} date_uninstalled={props.date_uninstalled}></Timeline>
                         <InstrumentLocation instrument_location={props.instrument_location}></InstrumentLocation>
                     </div>
-                    {toolTitle && <ToolTitle tool_title={toolTitle}></ToolTitle>}
-                    {cardDescription!=="Tool" && <InstrumentDescription id={cardId} instrument_desc={cardDescription}></InstrumentDescription>}
+                    <InstrumentDescription id={cardId} instrument_desc={props.instrument_desc}></InstrumentDescription>
                 </div>
             </div>
         </div>

@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Contact(){
     return (
-        <div className="px-4">
+        <div>
             <FooterHeading title="Contact"></FooterHeading>
-            <div className="px-2 pt-2">
+            <div className="pt-2">
                 <Link href={`mailto:${footerInfo.contact.email}`} className="text-lg font-medium">{footerInfo.contact.email}</Link>
                 <p className="text-lg font-normal">{footerInfo.contact.phone}</p>
             </div>

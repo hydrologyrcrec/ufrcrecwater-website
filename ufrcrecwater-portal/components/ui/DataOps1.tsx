@@ -43,7 +43,7 @@ export default function Action(props: Button & {cardId: string;}){
     }
 
     return (
-        <button key={props.label+"_container"} className={`appearance-none w-max py-1 px-2 flex gap-2 cursor-pointer items-center ${props.bgColor} rounded-lg text-white`} type={props.type} onClick={() => onClick({page: pathname, cardId: props.cardId, label: props.label})}>
+        <button key={props.label+"_container"} className={`appearance-none w-max py-1 px-2 flex gap-2 cursor-pointer items-center ${props.bgColor} rounded-lg text-black`} type={props.type} onClick={() => onClick({page: pathname, cardId: props.cardId, label: props.label})}>
             <Image src={props.src} alt={props.alt} height={props.height} width={props.width} className="object-contain"></Image><span>{props.label}</span>
         </button>
     )

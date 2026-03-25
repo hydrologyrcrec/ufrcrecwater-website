@@ -3,6 +3,6 @@ import Link from "next/link"
 
 export default function PubExternalLink(props: PubLink) {
     return (
-        <Link key={props.publication_url} href={props.publication_url}>{props.label}</Link>
+        <Link key={props.publication_url} href={props.publication_url} target="_blank" rel="noopener noreferrer">{props.label}</Link>
     )
 }

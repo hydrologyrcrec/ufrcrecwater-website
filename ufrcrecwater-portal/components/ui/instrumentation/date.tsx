@@ -8,7 +8,7 @@ export default function Timeline(props: InsDate) {
     return (
         <div className="flex justify-start gap-2">
             <DateLogo ></DateLogo>
-            <p className="text-white font-medium">{getYear(date_installed) + " - " + (props.date_uninstalled === "current" ? "Present" : getYear(new Date(props.date_uninstalled)))}</p>
+            <p className="text-black font-medium">{getYear(date_installed) + " - " + (props.date_uninstalled === "current" ? "Present" : getYear(new Date(props.date_uninstalled)))}</p>
         </div>
     )
 }

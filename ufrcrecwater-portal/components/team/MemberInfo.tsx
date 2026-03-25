@@ -12,12 +12,12 @@ import AdminOnly from "../ui/AdminOnly1";
 
 export default function MemberInfo(props: Member) {
     return (
-        <div key={props.user_id + "_card"} className="relative h-80 w-3/5 gap-4 flex items-stretch justify-start bg-gray-600 rounded-2xl shadow-gray-600 shadow-xl">
+        <div key={props.user_id + "_card"} className="relative h-80 w-200 flex items-stretch justify-start bg-linear-300 from-[#334142]/90 via-[#727f85]/90 to-[#334142]/90 shadow-gray-600 rounded-2xl shadow-xl">
             <div className="w-80 h-80 flex justify-start items-start shrink-0">
                 <MemberPicture id={props.s3_url} imageUrl={props.s3_url} height={350} width={350} alt={props.user_name + "_picture"}></MemberPicture>
             </div>
             <div className={`h-full w-2/3 flex overflow-scroll self-stretch`}>
-                <div className="m-2 p-2 flex flex-1 flex-col justify-start items-start self-stretch rounded-2xl">
+                <div className="p-4 flex flex-1 flex-col justify-start items-start self-stretch rounded-2xl">
                     <div className={`w-full flex justify-start items-start gap-2`}>
                         <MemberName id={props.user_id} userName={props.user_name.split(" ").slice(0, 2).join(" ")}></MemberName>
                         <MemberStatus id={props.user_id} status={props.tenure_end}></MemberStatus>
