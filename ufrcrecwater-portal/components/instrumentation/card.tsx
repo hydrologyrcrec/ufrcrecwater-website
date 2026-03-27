@@ -48,7 +48,7 @@ export default function InstrumentCard(props: Instrument) {
                 <Navigator id={props.id} hasTools={props.hasTools} {...LogosList} isBlack={false} css="top-1/2" iconHeight={50} iconWidth={50}></Navigator>
             </div>
         )}
-        <div key={props.id + "_card"} className="relative h-160 w-full max-w-100 flex flex-col justify-center items-center gap-4 shadow-xl shadow-gray-600 rounded-2xl">
+        <div key={props.id + "_card"} className="relative md:h-160 h-120 w-full max-w-100 flex flex-col justify-center items-center gap-4 shadow-xl shadow-gray-600 rounded-2xl">
             <FullScreenViewer open={open} setOpen={setOpen} {...LogosList} ></FullScreenViewer>
             <Navigator id={props.id} hasTools={props.hasTools} {...LogosList} isBlack={true} css="top-1/3" iconHeight={30} iconWidth={30}></Navigator>
             <div className="absolute h-full z-[-2] top-0 inset-0">

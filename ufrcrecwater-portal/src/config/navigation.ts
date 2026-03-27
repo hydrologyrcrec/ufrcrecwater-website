@@ -69,7 +69,7 @@ export const PAGES : Pages = {
     facilities: {
         heading: "Facilities",
         title: "Research Facilities",
-        description: "Instrumentation Monitoring Network by Watershed Hydrology Lab",
+        description: "Lab and Field Infrastructure",
         rank: 5,
         href: "/facilities",
     }
@@ -77,7 +77,7 @@ export const PAGES : Pages = {
     // instrumentation: {
     //     heading: "Instrumentation",
     //     title: "Instrumentation",
-    //     description: "Instrumentation Monitoring Network by Watershed Hydrology Lab",
+    //     description: "Lab and Field Infrastructure",
     //     rank: 6,
     //     href: "/instrumentation",
     // },

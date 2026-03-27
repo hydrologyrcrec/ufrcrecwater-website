@@ -16,7 +16,7 @@ export default function PubThumbnail(props: PubTnail){
             width={props.width}
             alt = {props.alt}
             onError={() => setSrc(fallbackImage)}
-            className="w-full h-full md:rounded-l-2xl object-cover"
+            className="w-full h-full md:rounded-l-2xl md:object-cover"
             ></Image>
         </Link>
     )

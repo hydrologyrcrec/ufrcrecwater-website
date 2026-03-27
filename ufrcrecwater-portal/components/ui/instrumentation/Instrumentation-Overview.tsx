@@ -32,7 +32,7 @@ export default function InstrumentOverview(){
                     <div className="flex mb-6">
                         <div className="w-0 grow">
                             <p className="text-lg font-normal">
-                            A comprehensive set of environmental monitoring instruments was deployed at both the Ona Research and Education Center (Ona REC) and DeLuca Preserve to collect high-resolution data on hydrologic, soil, and atmospheric conditions. These included weather stations for measuring meteorological variables, soil moisture sensors (TEROS 12 and TEROS 54) for monitoring soil water content and potential, lysimeters for assessing subsurface drainage and nutrient leaching, and groundwater monitoring wells equipped with water level sensors to track groundwater fluctuations. In addition, flow meters and water quality sondes were used to monitor surface water dynamics and quality. All instruments were integrated with data loggers and telemetry systems to enable continuous recording and remote access to data, supporting detailed analysis of water balance and water quality processes.
+                            A comprehensive suite of field instruments has been deployed across research sites at the Range Cattle Research and Education Center (RCREC) and DeLuca Preserve to collect high-resolution data on hydrological, soil, forage, and atmospheric conditions. This network includes weather stations for measuring meteorological variables, soil moisture sensors for monitoring soil water content and potential, lysimeters for assessing subsurface drainage and nutrient leaching, and groundwater monitoring well equipped with water level sensors to track groundwater fluctuations. Additionally, flow meters and water quality sondes monitor surface water dynamics and quality. All instruments are integrated with data loggers and telemetry systems, to enable continuous recording and remote access supporting detailed analyses of water balance and water quality processes. Furthermore, the Hydrology laboratory at RCREC is equipped to conduct necessary analyses of collected soil, water and forage samples.
                             </p>
                         </div>
                     </div>
@@ -74,11 +74,6 @@ export default function InstrumentOverview(){
                             </div>
                         </div>
                     </div> */}
-                <div>
-                    <h2 className="text-black text-4xl">Instruments</h2>
-                    <hr className="mt-2 mb-6 border-red-300/50" />
-                </div>
-
                 </div>
             </div>
             <div>
