@@ -16,7 +16,7 @@ export default function InstrumentOverview(){
     }
     return (
         <>
-        <div className="w-full flex justify-center items-center px-6 pt-6">
+        <div className="w-full flex justify-center items-center px-6">
             <div className="w-19/20 flex flex-col justify-center items-center gap-6">
                 <div className="inline-block w-full">
 
@@ -25,7 +25,7 @@ export default function InstrumentOverview(){
                         <h1 className="text-black text-4xl">
                             {PAGES.facilities.description}
                         </h1>
-                        <hr className="mt-2 mb-6 border-[#afafaf]" />
+                        <hr className="mt-2 mb-6 border-red-300/50" />
                     </div>
 
                     {/* Description forced to same width */}
@@ -76,7 +76,7 @@ export default function InstrumentOverview(){
                     </div> */}
                 <div>
                     <h2 className="text-black text-4xl">Instruments</h2>
-                    <hr className="mt-2 mb-6 border-[#afafaf]" />
+                    <hr className="mt-2 mb-6 border-red-300/50" />
                 </div>
 
                 </div>

@@ -13,9 +13,8 @@ export const LogosList: Logos = {
     "location": { src: '/instrumentation/location.png', alt: 'location' },
     "calendar": { src: '/calendar.png', alt: 'calendar-icon' },
     "fullscreen": { src: '/instrumentation/fullscreen.png', alt: 'full-screen-viewer' },
-    "large-left-slider-white": { src: '/home/large-left-slider.png', alt: 'large-left-slider' },
-    "large-right-slider-white": { src: '/home/large-right-slider.png', alt: 'large-right-slider' },
-
+    "large-left-slider-white": { src: '/home/large-left-slider-white.png', alt: 'large-left-slider-white' },
+    "large-right-slider-white": { src: '/home/large-right-slider-white.png', alt: 'large-right-slider-white' },
 }
 
 export const mockInstrumentList: InstrumentList = {

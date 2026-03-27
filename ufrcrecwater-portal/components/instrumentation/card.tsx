@@ -35,7 +35,7 @@ export default function InstrumentCard(props: Instrument) {
         <>
         {open && (
             <div
-                className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+                className="fixed inset-0 z-50 bg-black flex items-center justify-center"
             >
                 <FullScreenCloser open={open} setOpen={setOpen}></FullScreenCloser>
                 <Image
@@ -45,16 +45,16 @@ export default function InstrumentCard(props: Instrument) {
                 height={800}
                 className="object-contain max-w-[90%] max-h-[90%] rounded-lg"
                 />
-                <Navigator id={props.id} hasTools={props.hasTools} {...LogosList} css="top-1/2" iconHeight={50} iconWidth={50}></Navigator>
+                <Navigator id={props.id} hasTools={props.hasTools} {...LogosList} isBlack={false} css="top-1/2" iconHeight={50} iconWidth={50}></Navigator>
             </div>
         )}
         <div key={props.id + "_card"} className="relative h-160 w-full max-w-100 flex flex-col justify-center items-center gap-4 shadow-xl shadow-gray-600 rounded-2xl">
             <FullScreenViewer open={open} setOpen={setOpen} {...LogosList} ></FullScreenViewer>
-            <Navigator id={props.id} hasTools={props.hasTools} {...LogosList} css="top-1/3" iconHeight={30} iconWidth={30}></Navigator>
+            <Navigator id={props.id} hasTools={props.hasTools} {...LogosList} isBlack={true} css="top-1/3" iconHeight={30} iconWidth={30}></Navigator>
             <div className="absolute h-full z-[-2] top-0 inset-0">
             <InstrumentPicture id={cardDisplayPic} imageUrl={cardDisplayPic} height={350} width={350} alt={props.id + "_picture"}></InstrumentPicture>
             </div>
-            <div className="absolute h-4/10 z-1 bottom-0 inset-x-0 bg-[#afafaf] flex flex-col rounded-b-2xl">
+            <div className="absolute h-4/10 z-1 bottom-0 inset-x-0 bg-[#FBF0E9] flex flex-col rounded-b-2xl">
             
                 <div className="p-4 flex flex-col justify-center items-start h-full backdrop-blur-3xl rounded-b-2xl">
                     <InstrumentTitle id={cardId} instrument_title={props.instrument_title}></InstrumentTitle>

@@ -12,13 +12,15 @@ export default function InstrumentPicture(props: InsPic){
       }, [props.imageUrl]);
 
     return (
+      <div className="flex flex-1 items-start">
         <Image
           src={src}
           height={props.height}
           width={props.width}
           alt={props.alt}
           onError={() => setSrc(fallbackImage)}
-          className="object-cover w-full h-full rounded-2xl"
+          className="object-contain w-full h-full rounded-2xl"
         />
+      </div>
     )
 }

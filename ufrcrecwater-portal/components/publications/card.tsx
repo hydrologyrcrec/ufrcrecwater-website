@@ -13,8 +13,8 @@ import PubThumbnail from "../ui/publications/publication-thumbnail"
 
 export default function PublicationCard(props: Publication) {
     return (
-        <div className="md:h-128 max-w-250 flex flex-col w-84 h-200 md:w-180 lg:w-250 md:flex-row md:items-stretch md:justify-start rounded-2xl bg-[#afafaf] shadow-gray-600 shadow-xl">
-            <div className="md:h-full h-96 flex items-center justify-start shrink-0 overflow-hidden md:rounded-l-2xl md:rounded-t-none rounded-t-2xl">
+        <div className="md:h-128 max-w-250 flex flex-col w-84 h-200 md:w-180 lg:w-250 md:flex-row md:items-stretch md:justify-start rounded-2xl bg-[#FBF0E9] shadow-gray-600 shadow-xl">
+            <div className="md:h-full w-100 h-96 flex items-center justify-start shrink-0 overflow-hidden md:rounded-l-2xl md:rounded-t-none rounded-t-2xl">
                 <PubThumbnail
                     id={props.id + "_image"}
                     imageUrl={`https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/public/Publications/thumbnails/${props.id}.jpg`}

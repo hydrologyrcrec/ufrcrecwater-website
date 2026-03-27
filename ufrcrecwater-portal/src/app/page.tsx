@@ -8,7 +8,8 @@ import Headline from "../../components/ui/home/headline";
 
 export default function HomePage() {
   return (
-    <main className="p-5 h-screen flex justify-center bg-(--color-bg) text-(--color-text)]">
+    <main className="p-5 flex flex-col gap-6 items-center h-screen bg-(--color-bg) text-(--color-text)">
+      <Headline></Headline>
       <Home></Home>
     </main>
   );
