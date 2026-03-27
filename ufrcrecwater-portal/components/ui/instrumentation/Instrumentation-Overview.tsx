@@ -23,7 +23,7 @@ export default function InstrumentOverview(){
                     {/* Title (defines width) */}
                     <div>
                         <h1 className="text-black text-4xl">
-                            {PAGES.instrumentation.description}
+                            {PAGES.facilities.description}
                         </h1>
                         <hr className="mt-2 mb-6 border-[#afafaf]" />
                     </div>

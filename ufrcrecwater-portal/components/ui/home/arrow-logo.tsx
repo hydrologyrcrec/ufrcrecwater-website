@@ -19,7 +19,7 @@ export default function ArrowLogo(props: ArrowNavigatorProps){
         alt={props.logo.alt} 
         height={40} 
         width={40} 
-        className="cursor-pointer" 
+        className= {slidesLength > 1 ? "cursor-pointer" : "cursor-not-allowed" }
         onClick={() => changeSlide(props.direction)}>
         </Image>
     )

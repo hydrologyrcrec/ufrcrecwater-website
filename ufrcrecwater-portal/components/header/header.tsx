@@ -23,7 +23,7 @@ export default function Header() {
     <header className="w-full">
       {/* WHY: Center the whole header row and keep it responsive */}
       <HeaderMiniNav menuStatusProp={menuStatus} changeMenuStatusProp={setMenuStatus}></HeaderMiniNav>
-      <div className={`flex justify-end xl:justify-center xl:gap-2 px-6 py-2 w-full items-center`}>
+      <div className={`flex justify-end xl:justify-center xl:gap-2 px-6 py-4 w-full items-center`}>
         {/* <HeaderLogo /> */}
         <HeaderNav />
         <div className="h-full flex justify-center items-center">

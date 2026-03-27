@@ -68,3 +68,27 @@ export const mockSlides: Slides = [
     },
   ];
   
+export const mockSlides1: Slides = [
+  {
+    slide_info: {
+      id: "slide-001",
+      s3_url:"https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/public/hms-instrumentation.jpg",
+      title: "Hydrometric Station Installation",
+      updated_at: new Date("2025-11-28"),
+      description: "Installing hydrometric stations for water quality monitoring"
+    },
+    headline_type: "installation",
+    recent: true,
+  },
+  {
+    slide_info: {
+      id: "slide-002",
+      s3_url:"https://ufrcrecwater-assets.s3.us-east-1.amazonaws.com/public/Site4.jpg",
+      title: "Site Visit at DeLuca Preserve",
+      updated_at: new Date("2025-12-12"),
+      description: "Assesing wetland ecosystem health at DeLuca Preserve"
+    },
+    headline_type: "sites",
+    recent: true,
+  }
+]

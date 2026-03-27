@@ -12,7 +12,7 @@ export default function ArrowLogo(props: ArrowNavigatorProps){
         try {
             if(toolsFetchRequired && data?.get(props.instrument_id)?.isDataFetched===false){
                 const res = await fetch(
-                    `${baseURL}/instruments/tools?instrument_id=${props.instrument_id}`,
+                    `${baseURL}/facilities/tools?instrument_id=${props.instrument_id}`,
                     { cache: "no-store" }
                   );
                   const payload: { tools: Tool[] } = await res.json();
@@ -28,8 +28,8 @@ export default function ArrowLogo(props: ArrowNavigatorProps){
             <Image 
                 src={props.logo.src} 
                 alt={props.logo.alt} 
-                height={30} 
-                width={30} 
+                height={props.iconHeight} 
+                width={props.iconWidth} 
                 className={props.toolsFetchRequired? "cursor-pointer" : "cursor-not-allowed"}
             />
         </button>

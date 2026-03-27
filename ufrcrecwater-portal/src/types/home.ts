@@ -41,7 +41,9 @@ export type HeadlineType =
   | "news"
   | "conferences"
   | "applications"
-  | "gallery";
+  | "gallery"
+  | "sites"
+  | "installation";
 
 export type SlideInfo = {
     id: string;

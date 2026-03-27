@@ -5,12 +5,12 @@ import { InstrumentList } from "@/types/instrument";
 import { baseURL } from "@/data/constants";
 
 export const metadata: Metadata = {
-  title: PAGES.instrumentation.title,
-  description: PAGES.instrumentation.description,
+  title: PAGES.facilities.title,
+  description: PAGES.facilities.description,
 };
 
 async function getInstruments(): Promise<InstrumentList> {
-  const res = (await fetch(`${baseURL}/instruments`, { cache: "no-store" }))
+  const res = (await fetch(`${baseURL}/facilities`, { cache: "no-store" }))
   return res.json();
 }
 

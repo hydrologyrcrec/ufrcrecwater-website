@@ -14,13 +14,13 @@ export type Page = {
 };
 
 export type PageKey =
-//   | "home"
+  | "home"
   | "research"
   | "publications"
   | "team"
 //   | "outreach"
-//   | "facilities"
-  | "instrumentation"
+  | "facilities"
+//   | "instrumentation"
 //   | "news"
 //   | "conferences"
 //   | "data"
@@ -31,13 +31,13 @@ export type Pages = Record<PageKey, Page>;
 
 
 export const PAGES : Pages = {
-    // home: {
-    //     heading: "Home",
-    //     title: "Hydrology and Water Quality Program",
-    //     description: "Official research portal showcasing ongoing research, publications, instrumentation, facilities, and the research team.",
-    //     rank: 0,
-    //     href: "/",
-    // },
+    home: {
+        heading: "Home",
+        title: "Hydrology and Water Quality Program",
+        description: "Official research portal showcasing ongoing research, publications, instrumentation, facilities, and the research team.",
+        rank: 0,
+        href: "/",
+    },
     research: {
         heading: "Research",
         title: "Ongoing Research Areas",
@@ -66,20 +66,21 @@ export const PAGES : Pages = {
     //     rank: 4,
     //     href: "/outreach",
     // },
-    // facilities: {
-    //     heading: "Facilities",
-    //     title: "Research Facilities",
-    //     description: "Laboratories, computing infrastructure, and research facilities supporting ongoing projects under Dr. Golmar Golmohammadi",
-    //     rank: 5,
-    //     href: "/facilities",
-    // },
-    instrumentation: {
-        heading: "Instrumentation",
-        title: "Instrumentation",
+    facilities: {
+        heading: "Facilities",
+        title: "Research Facilities",
         description: "Instrumentation Monitoring Network by Watershed Hydrology Lab",
-        rank: 6,
-        href: "/instrumentation",
-    },
+        rank: 5,
+        href: "/facilities",
+    }
+    // ,
+    // instrumentation: {
+    //     heading: "Instrumentation",
+    //     title: "Instrumentation",
+    //     description: "Instrumentation Monitoring Network by Watershed Hydrology Lab",
+    //     rank: 6,
+    //     href: "/instrumentation",
+    // },
     // news: {
     //     heading: "News",
     //     title: "News & Updates",

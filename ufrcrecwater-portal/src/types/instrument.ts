@@ -37,6 +37,8 @@ export type ToolList = {
 
 export type ArrowNavigatorProps = {
     logo: Icon;
+    iconHeight: number;
+    iconWidth: number;
     direction: 'left' | 'right'
     toolsFetchRequired: boolean
     instrument_id: string
@@ -59,7 +61,7 @@ export type InstrumentList = {
     instruments: Instrument []
 }
 
-export type LogoKey = 'left-arrow' | 'right-arrow' | 'left-blocked-arrow' | 'right-blocked-arrow' | 'location' | 'calendar'
+export type LogoKey = 'left-arrow' | 'right-arrow' | 'left-blocked-arrow' | 'right-blocked-arrow' | 'location' | 'calendar' | 'fullscreen' | 'large-left-slider-white' | 'large-right-slider-white'
 
 export type Icon = {
   src: string;

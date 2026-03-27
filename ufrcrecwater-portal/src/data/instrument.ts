@@ -11,7 +11,11 @@ export const LogosList: Logos = {
     "left-blocked-arrow": { src: '/instrumentation/left-blocked-arrow.png', alt: 'large-left-slider-blocked' },
     "right-blocked-arrow": { src: '/instrumentation/right-blocked-arrow.png', alt: 'large-right-slider-blocked' },
     "location": { src: '/instrumentation/location.png', alt: 'location' },
-    "calendar": { src: '/calendar.png', alt: 'Calendar Icon' },
+    "calendar": { src: '/calendar.png', alt: 'calendar-icon' },
+    "fullscreen": { src: '/instrumentation/fullscreen.png', alt: 'full-screen-viewer' },
+    "large-left-slider-white": { src: '/home/large-left-slider.png', alt: 'large-left-slider' },
+    "large-right-slider-white": { src: '/home/large-right-slider.png', alt: 'large-right-slider' },
+
 }
 
 export const mockInstrumentList: InstrumentList = {

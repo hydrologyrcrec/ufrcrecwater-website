@@ -9,7 +9,7 @@ export default function Category(props: {title: HeadlineType}){
         <div className="p-4 absolute z-4 h-max w-full flex justify-start">
             <div className="flex w-max px-2 gap-2">
                 <PlayIcon></PlayIcon>
-                <h2 className="text-xl font-bold text-black">{headlineType}</h2>
+                <h2 className="text-xl font-bold text-white">{headlineType}</h2>
             </div>
         </div>
     )
