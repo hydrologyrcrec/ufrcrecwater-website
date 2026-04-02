@@ -5,7 +5,7 @@ export default function FooterHeading(props: Heading){
         <>
         <div className="inline-block">
             <h3 className="text-xl font-bold text-black">{props.title}</h3>
-            <hr className="border-red-300/50"/>
+            <hr className="border-blue-300/80"/>
         </div>
         </>
     )

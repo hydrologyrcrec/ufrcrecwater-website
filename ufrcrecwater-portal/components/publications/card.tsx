@@ -13,7 +13,7 @@ import PubThumbnail from "../ui/publications/publication-thumbnail"
 
 export default function PublicationCard(props: Publication) {
     return (
-        <div className="md:h-128 max-w-250 flex flex-col w-84 h-200 md:w-180 lg:w-250 md:flex-row md:items-stretch md:justify-start rounded-2xl bg-[#FBF0E9] shadow-gray-600 shadow-xl">
+        <div className="md:h-128 max-w-250 flex flex-col w-84 h-200 md:w-180 lg:w-250 md:flex-row md:items-stretch md:justify-start rounded-2xl bg-[#D9E2EC] shadow-gray-600 shadow-xl">
             <div className="md:h-full md:w-100 h-96 flex items-center md:justify-start shrink-0 overflow-hidden md:rounded-l-2xl md:rounded-t-none rounded-t-2xl">
                 <PubThumbnail
                     id={props.id + "_image"}
@@ -36,7 +36,7 @@ export default function PublicationCard(props: Publication) {
                     <PublicationElement id="DownloadPublication" css="hidden" component={<><PubDownloadPdf s3_url={props.s3_url} label="Download" filename={props.publication_title}></PubDownloadPdf></>} img={logosList.download}></PublicationElement>
                 </div>
                 <div className="flex flex-1 flex-col gap-2 text-black min-h-0">
-                    <PublicationElement  id="AuthorsList" component={<PubAuthorsList authors={props.authors}></PubAuthorsList>} img={logosList.writing}></PublicationElement>
+                    <PublicationElement  id="AuthorsList" css="hidden" component={<PubAuthorsList authors={props.authors}></PubAuthorsList>} img={logosList.writing}></PublicationElement>
                     <PublicationElement id="Journal" component={<PubJournalName journal_name={props.journal_name} journal_url={props.journal_url}></PubJournalName>} img={logosList.journal}></PublicationElement>
                     <PubDescription id={props.id} publication_desc={props.publication_desc}></PubDescription>
                 </div>

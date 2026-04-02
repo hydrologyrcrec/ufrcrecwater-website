@@ -57,12 +57,12 @@ export const publicationsMockData: PublicationList = {
   ]};
 
 export const logosList: Logos = {
-    calendar: { src: '/calendar.png', alt: 'Calendar Icon' },
-    link: { src: '/publications/link.png', alt: 'Link Icon' },
-    view: { src: '/publications/view.png', alt: 'View Icon' },
-    download: { src: '/publications/download.png', alt: 'Download Icon' },
-    journal: { src: '/publications/journal.png', alt: 'Journal Icon' },
-    writing: { src: '/publications/writing.png', alt: 'Writing Icon' },
+    calendar: { src: '/publications/calendar-black.png', alt: 'Calendar Icon' },
+    link: { src: '/publications/link-black.png', alt: 'Link Icon' },
+    view: { src: '/publications/view-black.png', alt: 'View Icon' },
+    download: { src: '/publications/download-black.png', alt: 'Download Icon' },
+    journal: { src: '/publications/journal-black.png', alt: 'Journal Icon' },
+    writing: { src: '/publications/writing-black.png', alt: 'Writing Icon' },
     menu: { src: '/publications/menu.png', alt: 'Menu Icon' },
     gradientmenu: { src: '/publications/gradient-menu.png', alt: 'Gradient Menu Icon' },
     ufifas: { src: '/uf-ifas-logo.jpg', alt: 'UF IFAS Logo' },
@@ -77,3 +77,5 @@ export const FilterCheckboxOptions : Filter = {
        {id: "author", label: "Author", value: "Author", checked: false},
     ]
 } 
+
+// #2361FF - Blue Color Icon

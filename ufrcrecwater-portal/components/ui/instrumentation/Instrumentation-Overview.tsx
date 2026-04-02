@@ -25,7 +25,7 @@ export default function InstrumentOverview(){
                         <h1 className="text-black text-4xl">
                             {PAGES.facilities.description}
                         </h1>
-                        <hr className="mt-2 mb-6 border-red-300/50" />
+                        <hr className="mt-2 mb-6 border-blue-300/80" />
                     </div>
 
                     {/* Description forced to same width */}

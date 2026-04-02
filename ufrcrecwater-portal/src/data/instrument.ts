@@ -10,11 +10,12 @@ export const LogosList: Logos = {
     "right-arrow": { src: '/instrumentation/right-arrow.png', alt: 'large-right-slider' },
     "left-blocked-arrow": { src: '/instrumentation/left-blocked-arrow.png', alt: 'large-left-slider-blocked' },
     "right-blocked-arrow": { src: '/instrumentation/right-blocked-arrow.png', alt: 'large-right-slider-blocked' },
-    "location": { src: '/instrumentation/location.png', alt: 'location' },
-    "calendar": { src: '/calendar.png', alt: 'calendar-icon' },
+    "location": { src: '/instrumentation/location-black.png', alt: 'location' },
+    "calendar": { src: '/publications/calendar-black.png', alt: 'calendar-icon' },
     "fullscreen": { src: '/instrumentation/fullscreen.png', alt: 'full-screen-viewer' },
     "large-left-slider-white": { src: '/home/large-left-slider-white.png', alt: 'large-left-slider-white' },
     "large-right-slider-white": { src: '/home/large-right-slider-white.png', alt: 'large-right-slider-white' },
+    "calendar-blue": { src: '/calendar-blue1.png', alt: 'calendar-blue1' }
 }
 
 export const mockInstrumentList: InstrumentList = {

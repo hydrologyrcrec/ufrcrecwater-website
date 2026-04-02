@@ -22,16 +22,13 @@ export function HeaderNav() {
       aria-label="Primary navigation"
       className={[
         // WHY: Gradient background exactly as requested
-        "xl:flex hidden h-16 flex-1 rounded-md", 
+        "xl:flex hidden h-18 flex-1 rounded-md", 
         "text-black my-2",
-        "bg-[#FBF0E9]",
-        "border",
-        "border-red-300/50",
         // WHY: On small screens, allow horizontal scroll rather than wrapping into ugly rows
         "whitespace-nowrap",
       ].join(" ")}
     >
-      <ul className="w-full px-7.5 flex justify-evenly items-center">
+      <ul className="w-full px-7.5 flex justify-center gap-12 items-center">
         {navItems.map((page) => (
           <li key={page.href} className="shrink-0">
             <Link

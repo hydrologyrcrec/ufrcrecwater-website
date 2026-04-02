@@ -20,10 +20,10 @@ export type menuProps = {
 export default function Header() {
   const [menuStatus, setMenuStatus] = useState(false);
   return (
-    <header className="w-full">
+    <header className="w-full xl:bg-[#D9E2EC] fixed z-50 xl:border xl:border-blue-300/80">
       {/* WHY: Center the whole header row and keep it responsive */}
       <HeaderMiniNav menuStatusProp={menuStatus} changeMenuStatusProp={setMenuStatus}></HeaderMiniNav>
-      <div className={`flex justify-end xl:justify-center xl:gap-2 px-6 py-4 w-full items-center`}>
+      <div className={`flex justify-end xl:justify-center w-full`}>
         {/* <HeaderLogo /> */}
         <HeaderNav />
         <div className="h-full flex justify-center items-center">

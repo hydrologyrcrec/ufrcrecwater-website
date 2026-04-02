@@ -54,8 +54,7 @@ export default function InstrumentCard(props: Instrument) {
             <div className="absolute h-full z-[-2] top-0 inset-0">
             <InstrumentPicture id={cardDisplayPic} imageUrl={cardDisplayPic} height={350} width={350} alt={props.id + "_picture"}></InstrumentPicture>
             </div>
-            <div className="absolute h-4/10 z-1 bottom-0 inset-x-0 bg-[#FBF0E9] flex flex-col rounded-b-2xl">
-            
+            <div className="absolute h-4/10 z-1 bottom-0 inset-x-0 bg-[#D9E2EC] flex flex-col rounded-b-2xl">
                 <div className="p-4 flex flex-col justify-center items-start h-full backdrop-blur-3xl rounded-b-2xl">
                     <InstrumentTitle id={cardId} instrument_title={props.instrument_title}></InstrumentTitle>
                     <div className="flex px-2 py-1 justify-start gap-2 flex-col">

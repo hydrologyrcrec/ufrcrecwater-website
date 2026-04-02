@@ -18,7 +18,7 @@ export default function InstrumentHistory(props: InstrumentList) {
   }, [props.instruments, setInitialData]);
 
   return (
-    <div className="p-5 flex flex-col w-full justify-center gap-6 font-bold">
+    <div className="relative xl:top-30 top-5 p-5 flex flex-col w-full justify-center gap-6 font-bold">
        <InstrumentOverview></InstrumentOverview>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,400px))]
                 sm:grid-cols-[minmax(300px,400px)_minmax(300px,400px)]

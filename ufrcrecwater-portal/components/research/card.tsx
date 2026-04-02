@@ -5,7 +5,7 @@ import ResearchDescription from "../ui/research/description";
 
 export default function ResearchCard(props: Research) {
     return (
-        <div key={props.id + "_card"} className="w-84 h-150 md:h-96 md:w-180 lg:w-250 flex flex-col md:flex-row md:items-stretch md:justify-start rounded-2xl shadow-xl bg-[#FBF0E9] shadow-gray-600 overflow-hidden">
+        <div key={props.id + "_card"} className="w-84 h-150 md:h-96 md:w-180 lg:w-250 flex flex-col md:flex-row md:items-stretch md:justify-start rounded-2xl shadow-xl bg-[#D9E2EC] shadow-gray-600 overflow-hidden">
             <div className="h-96 md:w-90 md:h-full md:flex md:justify-start md:shrink-0 md:items-start">
                 <ResearchPicture id={props.s3_url} imageUrl={props.s3_url} height={350} width={350} alt={props.id + "_picture"}></ResearchPicture>
             </div>
