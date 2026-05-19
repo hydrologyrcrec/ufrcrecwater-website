@@ -4,14 +4,30 @@ import { menuProps } from "../../header/header";
 
 export function MenuLogo(props: menuProps) {
   return (
+    <button
+      onClick={() => props.changeMenuStatusProp(!props.menuStatusProp)}
+      className="
+        xl:hidden
+        fixed
+        top-5
+        right-5
+        z-50
+        w-12
+        h-12
+        flex
+        items-center
+        justify-center
+        shrink-0
+      "
+      aria-label="Toggle menu"
+    >
       <Image
-        src={props.menuStatusProp? logosList.close.src : logosList.menu.src}
-        alt={props.menuStatusProp? logosList.close.alt : logosList.menu.alt}
-        width={props.menuStatusProp? 40: 30}
-        height={props.menuStatusProp? 40: 30}
-        className={`xl:hidden ${props.menuStatusProp && "fixed z-8 pr-6 pt-8"}`}
+        src={props.menuStatusProp ? logosList.close.src : logosList.menu.src}
+        alt={props.menuStatusProp ? logosList.close.alt : logosList.menu.alt}
+        width={32}
+        height={32}
         priority
-        onClick={() => props.changeMenuStatusProp(!props.menuStatusProp)}
       />
+    </button>
   );
 }
